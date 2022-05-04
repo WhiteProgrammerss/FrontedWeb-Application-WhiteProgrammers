@@ -13,28 +13,75 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { RegisterClientComponent } from './register-client/register-client.component';
+import { RegisterTechnicianComponent } from './register-technician/register-technician.component';
+import { ClientProfileComponent } from './client/client-profile/client-profile.component';
+import { ClientPlanComponent } from './client/client-plan/client-plan.component';
+import { ClientReservationComponent } from './client/client-reservation/client-reservation.component';
+import { ClientApplianceComponent } from './client/client-appliance/client-appliance.component';
+import {MatMenuModule} from "@angular/material/menu";
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
+import { ClientNavbarComponent } from './client-navbar/client-navbar.component';
+import { TechnicianNavbarComponent } from './technician-navbar/technician-navbar.component';
+import {ClientsService} from "./services/clients/clients.service";
+import {TechniciansService} from "./services/technicians/technicians.service";
+import { TechnicianProfileComponent } from './technician/technician-profile/technician-profile.component';
+import { TechnicianRouteComponent } from './technician/technician-route/technician-route.component';
+import { TechnicianReportComponent } from './technician/technician-report/technician-report.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSortModule,
-    MatInputModule,
-    MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    HomeComponent,
+    RegisterClientComponent,
+    RegisterTechnicianComponent,
+    ClientProfileComponent,
+    ClientPlanComponent,
+    ClientReservationComponent,
+    ClientApplianceComponent,
+    HomeNavbarComponent,
+    ClientNavbarComponent,
+    TechnicianNavbarComponent,
+    TechnicianProfileComponent,
+    TechnicianRouteComponent,
+    TechnicianReportComponent
 
   ],
-  providers: [],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatSortModule,
+        MatInputModule,
+        MatButtonModule,
+        FormsModule,
+        FlexLayoutModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatSelectModule,
+        MatCardModule,
+        MatIconModule,
+        MatMenuModule,
+        LayoutModule,
+        MatSidenavModule,
+        MatListModule
+
+    ],
+  providers: [
+    ClientsService,
+    TechniciansService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

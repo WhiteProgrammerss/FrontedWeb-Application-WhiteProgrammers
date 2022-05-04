@@ -1,0 +1,48 @@
+<app-home-navbar></app-home-navbar>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register-Technician</mat-card-title>
+    </mat-card-header>
+    <form class="example-form" [formGroup]="registerTechnicianForm" (ngSubmit)="signup()">
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>FirstName</mat-label>
+          <input matInput formControlName="names">
+        </mat-form-field></td>
+      </tr></table>
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>LastName</mat-label>
+          <input matInput formControlName="lastNames">
+        </mat-form-field></td>
+      </tr></table>
+      <p>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address" placeholder="Ex. San Miguel">
+        </mat-form-field>
+      </p>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>CellphoneNumber</mat-label>
+        <span matPrefix>+51 &nbsp;</span>
+        <input type="tel" matInput  formControlName="cellphoneNumber" placeholder="912-251-632">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput name="email"  formControlName="email"
+               placeholder="Ex. pat@example.com">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" #message maxlength="256">
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+      <button mat-stroked-button type="submit" color="primary" class="btn-block">Register</button>
+    </form>
+  </mat-card>
+</div>

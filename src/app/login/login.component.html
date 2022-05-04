@@ -1,1 +1,28 @@
-<p>login works!</p>
+<app-home-navbar></app-home-navbar>
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form class="example-form" >
+      <mat-card-content>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" [(ngModel)]="user.email" name="email">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" [(ngModel)]="user.password" name="password"[type]="showPassword ? 'text' : 'password'">
+          <button mat-button matSuffix type="button" (click)="showPassword = !showPassword">
+            <mat-icon>{{ showPassword ? "visibility" : "visibility_off" }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </mat-card-content>
+
+      <button mat-raised-button color="primary" type="submit" (click)="SubmitLogin()">Login</button>
+    </form>
+    <br><br>
+    <a style="color: red;margin-top: 10px;" routerLink="/register">New User? Click to Sign Up!!</a>
+  </mat-card>
+</div>

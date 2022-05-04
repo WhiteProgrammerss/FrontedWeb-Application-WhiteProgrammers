@@ -1,0 +1,23 @@
+.example-card {
+  display: flex;
+}
+.example-card1 {
+  max-width: 600px;
+  left: 400px;
+  top: 100px;
+  display: flex;
+}
+.example-card2 {
+  max-width: 600px;
+  left: 400px;
+  top: 100px;
+  display: flex;
+}
+.example-header-image1 {
+  background-image: url('https://previews.123rf.com/images/faysalfarhan/faysalfarhan1605/faysalfarhan160503232/56888737-cliente-icono-de-miembro-bot%C3%B3n-redondo-de-color-rojo-brillante.jpg?fj=1');
+  background-size: cover;
+}
+.example-header-image2 {
+  background-image: url('https://previews.123rf.com/images/faysalfarhan/faysalfarhan1605/faysalfarhan160503232/56888737-cliente-icono-de-miembro-bot%C3%B3n-redondo-de-color-rojo-brillante.jpg?fj=1');
+  background-size: cover;
+}

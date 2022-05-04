@@ -1,0 +1,60 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "cellphoneNumber": "987654321",
+      "names": "Jhon Juan",
+      "lastNames": "Doe Marcial",
+      "address": "av. Los manzanos 123",
+      "email": "jhon.doe@gmail.com",
+      "password": "jhonjuan"
+    },
+    {
+      "id": 2,
+      "cellphoneNumber": "987433213",
+      "names": "Juan Pedro",
+      "lastNames": "Lopez Gonzales",
+      "address": "av. Brazil 1055",
+      "email": "juanloe@gmail.com",
+      "password": "juanloe"
+    },
+    {
+      "id": 3,
+      "cellphoneNumber": "987743212",
+      "names": "Jose Fernando",
+      "lastName": "Sanchez Cerro",
+      "address": "av. Palomas 345",
+      "email": "josesan@gmail.com",
+      "password": "josefernan"
+    }
+  ],
+  "technicians": [
+    {
+      "id": 1,
+      "names": "Juan Fernando",
+      "lastnames": "Ramirez Rojas",
+      "cellphoneNumber": "999123456",
+      "address": "Urb. Thiago Terán # 452",
+      "email": "jmanzanares@gmail.com",
+      "password": "juanfer"
+    },
+    {
+      "id": 2,
+      "names": "Ricardo",
+      "lastnames": "Farías Aragón",
+      "cellphoneNumber": "958870344",
+      "address": "Jr. Alonso Gallegos # 05 Piso 0",
+      "email": "maya.mario@gmail.com",
+      "password": "mayamar"
+    },
+    {
+      "id": 3,
+      "names": "Alverto Jorge",
+      "lastnames": "Águilar Guzmán",
+      "cellphoneNumber": "937506140",
+      "address": "Av. Mario Vallejo # 65591 Piso 43",
+      "email": "cortes.valentino@gmail.com",
+      "password": "alveragui"
+    }
+  ]
+}

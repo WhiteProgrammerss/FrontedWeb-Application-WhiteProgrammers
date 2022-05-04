@@ -1,1 +1,31 @@
-<p>register works!</p>
+<app-home-navbar></app-home-navbar>
+  <mat-card class="example-card1">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image1"></div>
+      <mat-card-title>Register Client</mat-card-title>
+    </mat-card-header>
+     <img mat-card-image src="https://previews.123rf.com/images/djvstock/djvstock1608/djvstock160803156/60730703-boy-avatar-masculino-icono-persona-personas-ilustraci%C3%B3n-y-plana-gr%C3%A1fico-vectorial.jpg?fj=1" alt="Photo of a Shiba Inu">
+     <mat-card-actions>
+       <button [routerLink]="'/register-client'"
+       mat-raised-button
+       color="primary">
+       Register Client
+       </button>
+     </mat-card-actions>
+  </mat-card>
+    <br><br><br><br>
+  <mat-card class="example-card2">
+     <mat-card-header>
+       <div mat-card-avatar class="example-header-image2"></div>
+       <mat-card-title>Register Technician</mat-card-title>
+     </mat-card-header>
+     <img mat-card-image src="https://cdn-icons-png.flaticon.com/512/2798/2798313.png" alt="Photo of a Shiba Inu">
+     <mat-card-actions>
+        <button [routerLink]="'/register-technician'"
+        mat-raised-button
+        color="primary">
+        Register Technician
+        </button>
+     </mat-card-actions>
+  </mat-card>
+
