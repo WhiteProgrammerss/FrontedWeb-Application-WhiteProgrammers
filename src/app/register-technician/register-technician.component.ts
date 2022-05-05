@@ -16,7 +16,7 @@ export class RegisterTechnicianComponent implements OnInit{
   ngOnInit(): void {
     this.registerTechnicianForm=this.fb.group({
       names:[""],
-      lastNames:[""],
+      lastnames:[""],
       address:[""],
       email:[""],
       password:[""],

@@ -30,13 +30,14 @@ import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { ClientNavbarComponent } from './client/client-navbar/client-navbar.component';
 import { TechnicianNavbarComponent } from './technician/technician-navbar/technician-navbar.component';
 import {ClientsService} from "./client/client-profile/services/clients.service";
-import {TechniciansService} from "./services/technicians/technicians.service";
-import { TechnicianProfileComponent } from './technician/technician-profile/technician-profile.component';
+import {TechniciansService} from "./technician/technician-profile/services/technicians.service";
+import { TechnicianProfileComponent } from './technician/technician-profile/pages/technician-profile/technician-profile.component';
 import { TechnicianRouteComponent } from './technician/technician-route/technician-route.component';
 import { TechnicianReportComponent } from './technician/technician-report/technician-report.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { ClientProfileComponent } from './client/client-profile/pages/client-profile/client-profile.component';
 import { EditClientProfileComponent } from './client/client-profile/pages/edit-client-profile/edit-client-profile.component';
+import { EditTechnicianProfileComponent } from './technician/technician-profile/pages/edit-technician-profile/edit-technician-profile.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { EditClientProfileComponent } from './client/client-profile/pages/edit-c
     TechnicianRouteComponent,
     TechnicianReportComponent,
     ClientProfileComponent,
-    EditClientProfileComponent
+    EditClientProfileComponent,
+    EditTechnicianProfileComponent
 
   ],
     imports: [
