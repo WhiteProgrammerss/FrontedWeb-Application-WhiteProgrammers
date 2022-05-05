@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import { HttpClient } from '@angular/common/http';
+import { FormGroup} from "@angular/forms";
 import {Technician} from "../models/technician";
-import {Client} from "../models/client";
-import {ClientsService} from "../services/clients/clients.service";
+import {Client} from "../client/client-profile/model/client";
+import {ClientsService} from "../client/client-profile/services/clients.service";
 import {TechniciansService} from "../services/technicians/technicians.service";
 
 @Component({
@@ -13,7 +12,6 @@ import {TechniciansService} from "../services/technicians/technicians.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public loginForm !:FormGroup;
   showPassword: Boolean = false;
 
   user: Client;
@@ -50,7 +48,7 @@ export class LoginComponent implements OnInit {
       if (technicianresponse.length > 0) {
         this.technicianFound = technicianresponse[0];
         if (this.technicianFound.password == this.user.password) {
-          this.route.navigate(['/technician',this.technicianFound.id,'technician-profile']);
+          this.route.navigate(['/technician',this.technicianFound.id,'client-profile']);
           console.log("Login Successful as a Technician !!");
         } else {
           console.log("Wrong Username or Password !!");

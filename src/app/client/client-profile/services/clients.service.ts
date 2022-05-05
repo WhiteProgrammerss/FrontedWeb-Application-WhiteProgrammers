@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
-import {Client} from "../../models/client";
+import {Client} from "../model/client";
 
 @Injectable({
   providedIn: 'root'
@@ -70,6 +70,14 @@ export class ClientsService {
       .pipe(
         retry(2),
         catchError(this.handleError));
+  }
+
+  updatePlan(clientId: any, planId: any, item: any): Observable<Client> {
+    return this.http.put<Client>(`${ this.basePath }/${ clientId }/plan/${ planId }`, JSON.stringify(item), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
   }
 
   // Delete

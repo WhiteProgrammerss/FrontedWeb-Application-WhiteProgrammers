@@ -1,0 +1,56 @@
+<app-client-navbar></app-client-navbar>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Profile Information</mat-card-title>
+    <mat-card-subtitle>User-Profile</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://previews.123rf.com/images/thesomeday123/thesomeday1231712/thesomeday123171200008/91087328-icono-de-perfil-de-avatar-predeterminado-para-mujer-marcador-de-posici%C3%B3n-de-foto-gris-vector-de-ilus.jpg?fj=1" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+
+    <table CELLSPACING="10" cellpadding="5"width="550" >
+      <tr>
+
+        <td width="35%"><strong>Name:</strong></td>
+        <td width="65%">
+          <input matInput class="input-box" placeholder="Name" name="Name"  [value]="clientActual.names"
+                 [(ngModel)]="clientActual.names" size="35">
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Last Name:</strong></td>
+        <td><input matInput class="input-box" placeholder="Last Name" name="Last Name" [value]="clientActual.lastName"
+                   [(ngModel)]="clientActual.lastName" size="35"> </td>
+
+      </tr>
+      <tr>
+        <td><strong>Phone number:</strong></td>
+        <td><input matInput class="input-box" placeholder="Phone Number" name="CellPhone " [value]="clientActual.cellphoneNumber"
+                   [(ngModel)]="clientActual.cellphoneNumber" size="35"> </td>
+      </tr>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td><input matInput class="input-box" type="email" placeholder="Email" name="Email" [value]="clientActual.email"
+                   [(ngModel)]="clientActual.email" size="35"></td>
+      </tr>
+      <tr>
+        <td><strong>Address:</strong></td>
+        <td><input matInput class="input-box" placeholder="Address" name="Address" [value]="clientActual.address"
+                   [(ngModel)]="clientActual.address" size="35"> </td>
+      </tr>
+      <tr>
+        <td><strong>Password:</strong></td>
+        <td><input matInput class="input-box" type="password" placeholder="Password" name="Email" [value]="clientActual.password"
+                   [(ngModel)]="clientActual.password" size="35" ></td>
+      </tr>
+    </table>
+
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="openDialog(clientActual)">SAVE CHANGES</button>
+  </mat-card-actions>
+
+
+</mat-card>
