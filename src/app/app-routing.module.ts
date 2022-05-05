@@ -31,8 +31,8 @@ const routes: Routes = [
     ]
   },
   { path: 'technician/:id', children:[
-      { path: '', redirectTo: 'technician-client-profile',pathMatch: 'full'},
-      { path: 'technician-client-profile', component: TechnicianProfileComponent},
+      { path: '', redirectTo: 'technician-profile',pathMatch: 'full'},
+      { path: 'technician-profile', component: TechnicianProfileComponent},
       { path: 'route', component: TechnicianRouteComponent},
       { path: 'reports', component: TechnicianReportComponent},
     ]
