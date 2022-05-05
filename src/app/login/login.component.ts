@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       if (technicianresponse.length > 0) {
         this.technicianFound = technicianresponse[0];
         if (this.technicianFound.password == this.user.password) {
-          this.route.navigate(['/technician',this.technicianFound.id,'/technician-profile']);
+          this.route.navigate(['/technician',this.technicianFound.id,'technician-profile']);
           console.log("Login Successful as a Technician !!");
         } else {
           console.log("Wrong Username or Password !!");
