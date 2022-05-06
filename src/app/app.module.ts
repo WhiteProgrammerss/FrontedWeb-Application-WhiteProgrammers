@@ -20,7 +20,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { RegisterClientComponent } from './register-client/register-client.component';
 import { RegisterTechnicianComponent } from './register-technician/register-technician.component';
 import { ClientPlanComponent } from './client/client-plan/client-plan.component';
-import { ClientReservationComponent } from './client/client-reservation/client-reservation.component';
 import { ClientApplianceComponent } from './client/client-appliance/page/client-appliance/client-appliance.component';
 import {MatMenuModule} from "@angular/material/menu";
 import { LayoutModule } from '@angular/cdk/layout';
@@ -44,6 +43,14 @@ import {
 } from "./client/client-appliance/page/edit-client-appliance/edit-client-appliance.component";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {AppliancesService} from "./client/client-appliance/services/appliances.service";
+import {
+  ClientAppointmentComponent
+} from "./client/client-appointment/page/client-appointment/client-appointment.component";
+import {
+  EditClientAppointmentComponent
+} from "./client/client-appointment/page/edit-client-appointment/edit-client-appointment.component";
+import {AppointmentsService} from "./client/client-appointment/services/appointments.service";
+
 
 @NgModule({
   declarations: [
@@ -54,7 +61,6 @@ import {AppliancesService} from "./client/client-appliance/services/appliances.s
     RegisterClientComponent,
     RegisterTechnicianComponent,
     ClientPlanComponent,
-    ClientReservationComponent,
     ClientApplianceComponent,
     HomeNavbarComponent,
     ClientNavbarComponent,
@@ -66,7 +72,9 @@ import {AppliancesService} from "./client/client-appliance/services/appliances.s
     EditClientProfileComponent,
     EditTechnicianProfileComponent,
     AddClientApplianceComponent,
-    EditClientApplianceComponent
+    EditClientApplianceComponent,
+   ClientAppointmentComponent,
+  EditClientAppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -95,6 +103,7 @@ import {AppliancesService} from "./client/client-appliance/services/appliances.s
     ClientsService,
     TechniciansService,
     AppliancesService,
+    AppointmentsService,
   ],
   bootstrap: [AppComponent],
   entryComponents:[
@@ -102,6 +111,7 @@ import {AppliancesService} from "./client/client-appliance/services/appliances.s
     EditTechnicianProfileComponent,
     AddClientApplianceComponent,
     EditClientApplianceComponent,
+    EditClientAppointmentComponent,
   ]
 })
 export class AppModule { }

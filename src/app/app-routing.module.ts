@@ -5,13 +5,15 @@ import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
 import {ClientApplianceComponent} from "./client/client-appliance/page/client-appliance/client-appliance.component";
 import {ClientPlanComponent} from "./client/client-plan/client-plan.component";
-import {ClientReservationComponent} from "./client/client-reservation/client-reservation.component";
 import {RegisterClientComponent} from "./register-client/register-client.component";
 import {RegisterTechnicianComponent} from "./register-technician/register-technician.component";
 import {TechnicianProfileComponent} from "./technician/technician-profile/pages/technician-profile/technician-profile.component";
 import {TechnicianReportComponent} from "./technician/technician-report/technician-report.component";
 import {TechnicianRouteComponent} from "./technician/technician-route/technician-route.component";
 import {ClientProfileComponent} from "./client/client-profile/pages/client-profile/client-profile.component";
+import {
+  ClientAppointmentComponent
+} from "./client/client-appointment/page/client-appointment/client-appointment.component";
 
 
 const routes: Routes = [
@@ -23,11 +25,11 @@ const routes: Routes = [
       {path: 'register-technician',  component: RegisterTechnicianComponent},
       {path: 'register-client',  component: RegisterClientComponent},
   {path: 'client/:id', children: [
-      { path: '', redirectTo: 'client-appliance', pathMatch: 'full'},
-      {path: 'reservation', component: ClientReservationComponent},
+      { path: '', redirectTo: 'client-profile', pathMatch: 'full'},
+      {path: 'appointment', component: ClientAppointmentComponent},
       {path: 'appliance',  component: ClientApplianceComponent},
       {path: 'plan', component: ClientPlanComponent},
-      {path: 'client-appliance', component: ClientProfileComponent}
+      {path: 'client-profile', component: ClientProfileComponent}
     ]
   },
   { path: 'technician/:id', children:[
