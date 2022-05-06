@@ -86,5 +86,140 @@
       "appointmentId": "3",
       "technicianId": "2"
     }
+  ],
+  "applianceBrands": [
+    {
+      "id": "1",
+      "name": "Samsung",
+      "imagePath": "samsung-logo.png"
+    },
+    {
+      "id": "2",
+      "name": "Daewoo",
+      "imagePath": "daewoo-logo.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Electrolux",
+      "imagePath": "electrolux-logo.png"
+    },
+    {
+      "id": "4",
+      "name": "LG",
+      "imagePath": "lg-logo.png"
+    }
+  ],
+  "applianceModels": [
+    {
+      "id": "1",
+      "name": "Refrigerator French Door IBACI Inox Look, 547 L (110 V)",
+      "model": "RF220FCTAS8/AP",
+      "imagePath": "https://cdn.tecnologia21.com/wp-content/uploads/2011/02/samsung-refrigeradoras.jpg",
+      "applianceBrandId": "1"
+    },
+    {
+      "id": "2",
+      "name": "Sliding Design Gas Cooker",
+      "model": "NX60T8115SS/AP",
+      "imagePath": "https://m.media-amazon.com/images/I/613epBv73dL._AC_SX679_.jpg",
+      "applianceBrandId": "1"
+    },
+    {
+      "id": "3",
+      "name": "Automatic washing-machine 14,5 Kg",
+      "model": "DWF-145GMG",
+      "imagePath": "http://fotos.estimamos.com/photo/daewoo-electronics/daewoo-electronics-dwd-l1221-1.jpg",
+      "applianceBrandId": "2"
+    },
+    {
+      "id": "4",
+      "name": "28 Liter Microwave Oven",
+      "model": "KOR-28MD",
+      "imagePath": "https://m.media-amazon.com/images/I/91rju4djMeL._AC_SX679_.jpg",
+      "applianceBrandId": "2"
+    },
+    {
+      "id": "5",
+      "name": "Washing-machine Electrolux Fuzzy Logic 10.5 kg",
+      "model": "EWIV10D2OSGSG",
+      "imagePath": "https://cdna.artstation.com/p/assets/images/images/020/669/964/large/evgeniy-burak-electrolux-eng0002.jpg?1568714508",
+      "applianceBrandId": "3"
+    },
+    {
+      "id": "6",
+      "name": "Dust and Water Vacuum",
+      "model": "GT30N",
+      "imagePath": "https://electroluxpe.vtexassets.com/arquivos/ids/155418-1200-1200?v=636953045000130000&width=1200&height=1200&aspect=true",
+      "applianceBrandId": "3"
+    },
+    {
+      "id": "7",
+      "name": "Refrigerator Bottom Freezer 336L, Multiple Airflow, Humidity Control and Wi-Fi Connectivity",
+      "model": "GB37WGT",
+      "imagePath": "https://www.lg.com/co/images/lavadoras-y-secadoras/md07512821/gallery/D-01.jpg",
+      "applianceBrandId": "4"
+    },
+    {
+      "id": "8",
+      "name": "Drying machine 9 Kg, front loading with Dual Inverter Heat Pump, EcoHybrid and Wi-Fi connectivity",
+      "model": "DF9WVC2S6",
+      "imagePath": "https://www.lg.com/levant_en/images/washing-machines/md05829412/gallery/1600_01.jpg",
+      "applianceBrandId": "4"
+    }
+  ],
+  "appliances": [
+    {
+      "id": "1",
+      "applianceModelId": "1",
+      "clientId": "1",
+      "purchaseDate": 2019
+    },
+    {
+      "id": "2",
+      "applianceModelId": "3",
+      "clientId": "1",
+      "purchaseDate": 2020
+    },
+    {
+      "id": "3",
+      "applianceModelId": "5",
+      "clientId": "2",
+      "purchaseDate": 2018
+    },
+    {
+      "id": "4",
+      "applianceModelId": "6",
+      "clientId": "3",
+      "purchaseDate": 2019
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "dateReserve": "19/10/2021",
+      "dateAttention": "20/10/2022",
+      "hour": "02:19",
+      "clientId": 1,
+      "technicianId": 1,
+      "applianceModelId": 1
+    },
+    {
+      "id": 2,
+      "dateReserve": "19/10/2021",
+      "dateAttention": "20/10/2022",
+      "hour": "09:42",
+      "clientId": 1,
+      "technicianId": 1,
+      "applianceModelId": 2
+    },
+    {
+      "id": "3",
+      "dateReserve": "19/10/2021",
+      "dateAttention": "15/05/2022",
+      "hour": "11:59",
+      "clientId": "2",
+      "technicianId": 2,
+      "applianceModelId": 3
+    }
   ]
 }

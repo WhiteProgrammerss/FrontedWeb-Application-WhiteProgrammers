@@ -6,7 +6,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {EditClientProfileComponent} from "../edit-client-profile/edit-client-profile.component";
 
 @Component({
-  selector: 'app-client-profile',
+  selector: 'app-client-appliance',
   templateUrl: './client-profile.component.html',
   styleUrls: ['./client-profile.component.css']
 })

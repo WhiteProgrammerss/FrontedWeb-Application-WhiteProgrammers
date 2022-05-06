@@ -20,8 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { RegisterClientComponent } from './register-client/register-client.component';
 import { RegisterTechnicianComponent } from './register-technician/register-technician.component';
 import { ClientPlanComponent } from './client/client-plan/client-plan.component';
-import { ClientReservationComponent } from './client/client-reservation/client-reservation.component';
-import { ClientApplianceComponent } from './client/client-appliance/client-appliance.component';
+import { ClientApplianceComponent } from './client/client-appliance/page/client-appliance/client-appliance.component';
 import {MatMenuModule} from "@angular/material/menu";
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -39,7 +38,20 @@ import { ClientProfileComponent } from './client/client-profile/pages/client-pro
 import { EditClientProfileComponent } from './client/client-profile/pages/edit-client-profile/edit-client-profile.component';
 import { EditTechnicianProfileComponent } from './technician/technician-profile/pages/edit-technician-profile/edit-technician-profile.component';
 import {MatExpansionModule} from "@angular/material/expansion";
+import { AddClientApplianceComponent } from './client/client-appliance/page/add-client-appliance/add-client-appliance.component';
+import {
+  EditClientApplianceComponent
+} from "./client/client-appliance/page/edit-client-appliance/edit-client-appliance.component";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {AppliancesService} from "./client/client-appliance/services/appliances.service";
+import {
+  ClientAppointmentComponent
+} from "./client/client-appointment/page/client-appointment/client-appointment.component";
+import {
+  EditClientAppointmentComponent
+} from "./client/client-appointment/page/edit-client-appointment/edit-client-appointment.component";
+import {AppointmentsService} from "./client/client-appointment/services/appointments.service";
+
 
 @NgModule({
   declarations: [
@@ -50,7 +62,6 @@ import {MatGridListModule} from "@angular/material/grid-list";
     RegisterClientComponent,
     RegisterTechnicianComponent,
     ClientPlanComponent,
-    ClientReservationComponent,
     ClientApplianceComponent,
     HomeNavbarComponent,
     ClientNavbarComponent,
@@ -60,7 +71,33 @@ import {MatGridListModule} from "@angular/material/grid-list";
     TechnicianReportComponent,
     ClientProfileComponent,
     EditClientProfileComponent,
-    EditTechnicianProfileComponent
+    EditTechnicianProfileComponent,
+    AddClientApplianceComponent,
+    EditClientApplianceComponent,
+   ClientAppointmentComponent,
+  EditClientAppointmentComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSortModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    MatDialogModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatSelectModule,
+    MatCardModule,
+    MatIconModule,
+    MatMenuModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    MatGridListModule
 
   ],
     imports: [
@@ -90,7 +127,16 @@ import {MatGridListModule} from "@angular/material/grid-list";
   providers: [
     ClientsService,
     TechniciansService,
+    AppliancesService,
+    AppointmentsService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+    EditClientProfileComponent,
+    EditTechnicianProfileComponent,
+    AddClientApplianceComponent,
+    EditClientApplianceComponent,
+    EditClientAppointmentComponent,
+  ]
 })
 export class AppModule { }
