@@ -97,33 +97,10 @@ import {AppointmentsService} from "./client/client-appointment/services/appointm
     LayoutModule,
     MatSidenavModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatExpansionModule
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatSortModule,
-        MatInputModule,
-        MatButtonModule,
-        FormsModule,
-        MatDialogModule,
-        FlexLayoutModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        MatSelectModule,
-        MatCardModule,
-        MatIconModule,
-        MatMenuModule,
-        LayoutModule,
-        MatSidenavModule,
-        MatListModule,
-        MatExpansionModule,
-        MatGridListModule
-
-    ],
   providers: [
     ClientsService,
     TechniciansService,

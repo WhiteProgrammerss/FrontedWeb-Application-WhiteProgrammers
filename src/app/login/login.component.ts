@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       if (clientresponse.length > 0) {
         this.clientFound = clientresponse[0];
         if (this.clientFound.password == this.user.password) {
-          this.route.navigate(['/client',this.clientFound.id,'client-appliance'])
+          this.route.navigate(['/client',this.clientFound.id,'client-profile'])
           console.log("Login Successful as a Client !!");
         } else {
           console.log("Wrong Username or Password !!");
