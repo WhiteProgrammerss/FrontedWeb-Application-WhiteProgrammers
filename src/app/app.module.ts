@@ -33,11 +33,13 @@ import {ClientsService} from "./client/client-profile/services/clients.service";
 import {TechniciansService} from "./technician/technician-profile/services/technicians.service";
 import { TechnicianProfileComponent } from './technician/technician-profile/pages/technician-profile/technician-profile.component';
 import { TechnicianRouteComponent } from './technician/technician-route/technician-route.component';
-import { TechnicianReportComponent } from './technician/technician-report/technician-report.component';
+import { TechnicianReportComponent } from './technician/technician-report/pages/technician-report/technician-report.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { ClientProfileComponent } from './client/client-profile/pages/client-profile/client-profile.component';
 import { EditClientProfileComponent } from './client/client-profile/pages/edit-client-profile/edit-client-profile.component';
 import { EditTechnicianProfileComponent } from './technician/technician-profile/pages/edit-technician-profile/edit-technician-profile.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -70,7 +72,7 @@ import { EditTechnicianProfileComponent } from './technician/technician-profile/
         MatInputModule,
         MatButtonModule,
         FormsModule,
-      MatDialogModule,
+        MatDialogModule,
         FlexLayoutModule,
         ReactiveFormsModule,
         HttpClientModule,
@@ -80,7 +82,9 @@ import { EditTechnicianProfileComponent } from './technician/technician-profile/
         MatMenuModule,
         LayoutModule,
         MatSidenavModule,
-        MatListModule
+        MatListModule,
+        MatExpansionModule,
+        MatGridListModule
 
     ],
   providers: [

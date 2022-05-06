@@ -9,7 +9,7 @@ import {ClientReservationComponent} from "./client/client-reservation/client-res
 import {RegisterClientComponent} from "./register-client/register-client.component";
 import {RegisterTechnicianComponent} from "./register-technician/register-technician.component";
 import {TechnicianProfileComponent} from "./technician/technician-profile/pages/technician-profile/technician-profile.component";
-import {TechnicianReportComponent} from "./technician/technician-report/technician-report.component";
+import {TechnicianReportComponent} from "./technician/technician-report/pages/technician-report/technician-report.component";
 import {TechnicianRouteComponent} from "./technician/technician-route/technician-route.component";
 import {ClientProfileComponent} from "./client/client-profile/pages/client-profile/client-profile.component";
 
