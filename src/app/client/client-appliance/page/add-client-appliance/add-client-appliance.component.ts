@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject} from "@angular/core";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {Appliance} from "../../model/appliance";
+import {ApplianceModel} from "../../model/appliancemodel";
 
 @Component({
   selector: 'app-add-client-appliance',
-  templateUrl: './add-client-appliance.component.html',
-  styleUrls: ['./add-client-appliance.component.css']
+  templateUrl: './add-client-appliance.component.html'
 })
-export class AddClientApplianceComponent implements OnInit {
+export class AddClientApplianceComponent {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<AddClientApplianceComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ApplianceModel,
+  ) {}
 
-  ngOnInit(): void {
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

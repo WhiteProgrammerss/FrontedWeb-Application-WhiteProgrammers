@@ -39,6 +39,11 @@ import { ClientProfileComponent } from './client/client-profile/pages/client-pro
 import { EditClientProfileComponent } from './client/client-profile/pages/edit-client-profile/edit-client-profile.component';
 import { EditTechnicianProfileComponent } from './technician/technician-profile/pages/edit-technician-profile/edit-technician-profile.component';
 import { AddClientApplianceComponent } from './client/client-appliance/page/add-client-appliance/add-client-appliance.component';
+import {
+  EditClientApplianceComponent
+} from "./client/client-appliance/page/edit-client-appliance/edit-client-appliance.component";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {AppliancesService} from "./client/client-appliance/services/appliances.service";
 
 @NgModule({
   declarations: [
@@ -60,35 +65,43 @@ import { AddClientApplianceComponent } from './client/client-appliance/page/add-
     ClientProfileComponent,
     EditClientProfileComponent,
     EditTechnicianProfileComponent,
-    AddClientApplianceComponent
+    AddClientApplianceComponent,
+    EditClientApplianceComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSortModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    MatDialogModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatSelectModule,
+    MatCardModule,
+    MatIconModule,
+    MatMenuModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    MatGridListModule
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatSortModule,
-        MatInputModule,
-        MatButtonModule,
-        FormsModule,
-      MatDialogModule,
-        FlexLayoutModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        MatSelectModule,
-        MatCardModule,
-        MatIconModule,
-        MatMenuModule,
-        LayoutModule,
-        MatSidenavModule,
-        MatListModule
-
-    ],
   providers: [
     ClientsService,
     TechniciansService,
+    AppliancesService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+    EditClientProfileComponent,
+    EditTechnicianProfileComponent,
+    AddClientApplianceComponent,
+    EditClientApplianceComponent,
+  ]
 })
 export class AppModule { }

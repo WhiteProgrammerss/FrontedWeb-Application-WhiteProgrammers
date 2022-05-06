@@ -1,27 +1,17 @@
 <app-client-navbar></app-client-navbar>
-<div class="cards">
-  <mat-card class="card">
+<button  mat-raised-button color="accent" (click)="openDialogAdd()">Add Item</button>
+<div class="cards" >
+
+  <mat-card class="card" *ngFor="let appliance of appliancesModelData;">
     <mat-card-header  class="mat-card-icon">
       <button  mat-raised-button color="accent" (click)="openDialogUpdate(appliance)">Edit Item</button>
     </mat-card-header>
-    <img mat-card-image src="https://www.lg.com/pe/images/refrigeradoras/md07518084/gallery/medium01.jpg" alt="Refrigerator">
+    <img mat-card-image [src]="appliance.imagePath"  alt="Refrigerator">
     <mat-card-content class="texto">
-      <p class="description">Refrigerator French Do or IBACI Inox Look, 54 7L (110 V)</p>
-      <p>RD220FCTAS8/AP</p>
-      <p>Samsung</p>
+      <div>{{appliance.name}}</div>
+      <div>{{appliance.model}}</div>
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="card">
-    <mat-card-header  class="mat-card-icon">
-      <button  mat-raised-button color="accent" (click)="openDialogUpdate(appliance)">Edit Item</button>
-    </mat-card-header>
-    <img mat-card-image src="https://www.lg.com/co/images/lavadoras-y-secadoras/md07512821/gallery/D-01.jpg" alt="washing-machine">
-    <mat-card-content class="texto">
-      <p class="description">Automatic washing-machine 14,5 Kg</p>
-      <p>DWF-145GMG</p>
-      <p>Daewoo</p>
-    </mat-card-content>
-  </mat-card>
 </div>
 

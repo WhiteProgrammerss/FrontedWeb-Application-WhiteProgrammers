@@ -1,6 +1,6 @@
-import { Component, inject } from "@angular/core";
+import { Component, Inject } from "@angular/core";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import { Client } from 'src/app/client/client-profile/model/client';
+import {ApplianceModel} from "../../model/appliancemodel";
 
 @Component({
   selector:'app-edit-client-appliance',
@@ -12,7 +12,7 @@ export class EditClientApplianceComponent {
 
   constructor(
     public dialogRef: MatDialogRef<EditClientApplianceComponent>,
-    @inject(MAT_DIALOG_DATA) public  data: Client,
+    @Inject(MAT_DIALOG_DATA) public  data: ApplianceModel,
   ){}
 
   onNoClick(): void {
