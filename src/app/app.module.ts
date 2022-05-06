@@ -21,7 +21,7 @@ import { RegisterClientComponent } from './register-client/register-client.compo
 import { RegisterTechnicianComponent } from './register-technician/register-technician.component';
 import { ClientPlanComponent } from './client/client-plan/client-plan.component';
 import { ClientReservationComponent } from './client/client-reservation/client-reservation.component';
-import { ClientApplianceComponent } from './client/client-appliance/client-appliance.component';
+import { ClientApplianceComponent } from './client/client-appliance/page/client-appliance/client-appliance.component';
 import {MatMenuModule} from "@angular/material/menu";
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -38,6 +38,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { ClientProfileComponent } from './client/client-profile/pages/client-profile/client-profile.component';
 import { EditClientProfileComponent } from './client/client-profile/pages/edit-client-profile/edit-client-profile.component';
 import { EditTechnicianProfileComponent } from './technician/technician-profile/pages/edit-technician-profile/edit-technician-profile.component';
+import { AddClientApplianceComponent } from './client/client-appliance/page/add-client-appliance/add-client-appliance.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { EditTechnicianProfileComponent } from './technician/technician-profile/
     TechnicianReportComponent,
     ClientProfileComponent,
     EditClientProfileComponent,
-    EditTechnicianProfileComponent
+    EditTechnicianProfileComponent,
+    AddClientApplianceComponent
 
   ],
     imports: [

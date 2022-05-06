@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
-import {ClientApplianceComponent} from "./client/client-appliance/client-appliance.component";
+import {ClientApplianceComponent} from "./client/client-appliance/page/client-appliance/client-appliance.component";
 import {ClientPlanComponent} from "./client/client-plan/client-plan.component";
 import {ClientReservationComponent} from "./client/client-reservation/client-reservation.component";
 import {RegisterClientComponent} from "./register-client/register-client.component";
@@ -23,11 +23,11 @@ const routes: Routes = [
       {path: 'register-technician',  component: RegisterTechnicianComponent},
       {path: 'register-client',  component: RegisterClientComponent},
   {path: 'client/:id', children: [
-      { path: '', redirectTo: 'client-profile', pathMatch: 'full'},
+      { path: '', redirectTo: 'client-appliance', pathMatch: 'full'},
       {path: 'reservation', component: ClientReservationComponent},
       {path: 'appliance',  component: ClientApplianceComponent},
       {path: 'plan', component: ClientPlanComponent},
-      {path: 'client-profile', component: ClientProfileComponent}
+      {path: 'client-appliance', component: ClientProfileComponent}
     ]
   },
   { path: 'technician/:id', children:[

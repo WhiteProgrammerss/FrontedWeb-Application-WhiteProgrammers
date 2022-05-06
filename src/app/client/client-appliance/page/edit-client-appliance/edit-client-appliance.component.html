@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Editar</h1>
+<div mat-dialog-content>
+  <form class="formulario">
+    <select class="formulario__campo">
+      <option disabled selected>--Marca--</option>
+      <option>Samsung</option>
+      <option>Daewoo</option>
+      <option>Electrolux</option>
+      <option>LG</option>
+    </select>
+    <br>
+    <br>
+    <select class="formulario__campo">
+      <option disabled selected>--Model--</option>
+      <option>RF220FCTAS8/AP</option>
+      <option>NX60T8115SS/AP</option>
+      <option>DWF-145GMG</option>
+      <option>KOR-28MD</option>
+      <option>EWIV10D2OSGSG</option>
+    </select>
+  </form>
+  <mat-form-field appearance="fill">
+
+
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>
