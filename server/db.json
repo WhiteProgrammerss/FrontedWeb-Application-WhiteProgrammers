@@ -12,7 +12,7 @@
     {
       "id": 2,
       "cellphoneNumber": "987433213",
-      "names": "Juan Pedro",
+      "names": "Juan Pablo",
       "lastNames": "Lopez Gonzales",
       "address": "av. Brazil 1055",
       "email": "juanloe@gmail.com",
@@ -22,17 +22,26 @@
       "id": 3,
       "cellphoneNumber": "987743212",
       "names": "Jose Fernando",
-      "lastName": "Sanchez Cerro",
+      "lastNames": "Sanchez Cerro",
       "address": "av. Palomas 345",
       "email": "josesan@gmail.com",
       "password": "josefernan"
+    },
+    {
+      "names": "gasgsa",
+      "lastNames": "gsagasg",
+      "address": "gqawtattqw",
+      "cellphoneNumber": "936532623",
+      "email": "sgfsaga@agasga.com",
+      "password": "casgqw",
+      "id": 4
     }
   ],
   "technicians": [
     {
       "id": 1,
       "names": "Juan Fernando",
-      "lastnames": "Ramirez Rojas",
+      "lastNames": "Ramirez Rojas",
       "cellphoneNumber": "999123455",
       "address": "Urb. Thiago Terán # 452",
       "email": "jmanzanares@gmail.com",
@@ -41,7 +50,7 @@
     {
       "id": 2,
       "names": "Ricardo",
-      "lastnames": "Farías Aragón",
+      "lastNames": "Farías Aragón",
       "cellphoneNumber": "958870344",
       "address": "Jr. Alonso Gallegos # 05 Piso 0",
       "email": "maya.mario@gmail.com",
@@ -50,11 +59,20 @@
     {
       "id": 3,
       "names": "Alverto Jorge",
-      "lastnames": "Águilar Guzmán",
+      "lastNames": "Águilar Guzmán",
       "cellphoneNumber": "937506140",
       "address": "Av. Mario Vallejo # 65591 Piso 43",
       "email": "cortes.valentino@gmail.com",
       "password": "alveragui"
+    },
+    {
+      "names": "cargas",
+      "lastNames": "gasgga",
+      "address": "gsagsag",
+      "cellphoneNumber": "923512512",
+      "email": "vasg@gagas.com",
+      "password": "castqtw",
+      "id": 4
     }
   ],
   "reports": [
@@ -197,7 +215,7 @@
     {
       "id": 1,
       "dateReserve": "19/10/2021",
-      "dateAttention": "20/10/2022",
+      "dateAttention": "22/09/2022",
       "hour": "02:19",
       "clientId": 1,
       "technicianId": 1,
