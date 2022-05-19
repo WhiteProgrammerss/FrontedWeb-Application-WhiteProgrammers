@@ -15,12 +15,10 @@ import {AppliancesModelService} from "../../services/appliancesmodel.service";
 })
 export class ClientApplianceComponent implements OnInit {
   id: string;
-  appliancesData: Appliance[];
   appliancesModelData: ApplianceModel[];
 
   constructor(private route: ActivatedRoute, private appliancesService: AppliancesService,private appliancesModelService: AppliancesModelService,
               private dialog: MatDialog) {
-    this. appliancesData=[] as Appliance[];
     this. appliancesModelData=[] as ApplianceModel[];
     this.id=this.route.snapshot.paramMap.get('id')!;
   }
@@ -40,10 +38,13 @@ export class ClientApplianceComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result =>{
       if(result!=undefined){
-        this.appliancesModelService.create(result).subscribe((response:any)=>{
+        applianceModel.name=result.get("name")?.value;
+        applianceModel.model=result.get("model")?.value;
+        applianceModel.imagePath=result.get("imagePath")?.value;
+        this.appliancesModelService.create(applianceModel).subscribe((response:any)=>{
           this.updateAppliancesData();
+          alert("Add appliance Successfully");
         });
-
       }
     });
   }
@@ -56,7 +57,7 @@ export class ClientApplianceComponent implements OnInit {
 
   openDialogUpdate(data: ApplianceModel): void{
     const dialogRef=this.dialog.open(EditClientApplianceComponent,{
-      data:{...data}
+      data: {...data}
     });
 
     dialogRef.afterClosed().subscribe(result =>{

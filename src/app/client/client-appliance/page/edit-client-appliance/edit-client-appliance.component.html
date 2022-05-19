@@ -3,22 +3,34 @@
   <p>Would you like to add an item?</p>
 </div>
 
-<mat-form-field appearance="fill">
-  <mat-label>Name</mat-label>
-  <input matInput [(ngModel)]="data.name">
-</mat-form-field>
-<br>
-<br>
-<mat-form-field appearance="fill">
-  <mat-label>Model</mat-label>
-  <input matInput [(ngModel)]="data.model">
-</mat-form-field>
-<br>
+<form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="editApplianceFormGroup">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput  autocomplete="off" formControlName="name" >
+    <mat-error *ngIf="editApplianceFormGroup.get('name')?.hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Url To Image</mat-label>
+    <input matInput  autocomplete="off" formControlName="imagePath" >
+    <mat-error *ngIf="editApplianceFormGroup.get('imagePath')?.hasError('required')">
+      Url is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Model</mat-label>
+    <input matInput  autocomplete="off" formControlName="model" >
+    <mat-error *ngIf="editApplianceFormGroup.get('model')?.hasError('required')">
+      Model is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+
 
 
 <div mat-dialog-actions>
-
   <button mat-raised-button color="warn" (click)="onNoClick()">No Thanks</button>
-  <button *ngIf="data" mat-raised-button color="accent" [mat-dialog-close]="data"
-          [disabled]="data.name==null||data.name.length==0||data.model==null||data.model.length==0" >Ok</button>
+  <button *ngIf="editApplianceFormGroup" mat-raised-button color="accent" [mat-dialog-close]="editApplianceFormGroup"
+          [disabled]="editApplianceFormGroup.invalid" >Ok</button>
 </div>
