@@ -38,9 +38,13 @@ export class TechnicianProfileComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result=>{
       if(result!=undefined){
-        let technicianReceived = result;
-
-        this.techniciansService.update(this.id,technicianReceived).subscribe(response=>{
+        data.names=result.get("names")?.value;
+        data.lastNames=result.get("lastNames")?.value;
+        data.address=result.get("address")?.value;
+        data.cellphoneNumber=result.get("cellphoneNumber")?.value;
+        data.email=result.get("email")?.value;
+        data.password=result.get("password")?.value;
+        this.techniciansService.update(data.id,data).subscribe(response=>{
           this.getActualData();
         })
       }

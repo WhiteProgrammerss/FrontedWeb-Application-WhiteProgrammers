@@ -38,9 +38,13 @@ export class ClientProfileComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result=>{
       if(result!=undefined){
-        let clientReceived = result;
-
-        this.clientsService.update(this.id,clientReceived).subscribe(response=>{
+        data.names=result.get("names")?.value;
+        data.lastNames=result.get("lastNames")?.value;
+        data.address=result.get("address")?.value;
+        data.cellphoneNumber=result.get("cellphoneNumber")?.value;
+        data.email=result.get("email")?.value;
+        data.password=result.get("password")?.value;
+        this.clientsService.update(data.id,data).subscribe(response=>{
           this.getActualData();
         })
       }
