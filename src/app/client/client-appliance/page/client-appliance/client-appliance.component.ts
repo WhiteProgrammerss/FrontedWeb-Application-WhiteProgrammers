@@ -62,16 +62,15 @@ export class ClientApplianceComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result =>{
       if(result!=undefined){
-        let actualAppliance = result;
-
-        this.appliancesModelService.update(actualAppliance.id,result).subscribe(response=>{
+        data.name=result.get("name")?.value;
+        data.model=result.get("model")?.value;
+        data.imagePath=result.get("imagePath")?.value;
+        this.appliancesModelService.update(data.id,data).subscribe(response=>{
           this.updateAppliancesData();
           console.log("Updated");
         })
       }
     });
   }
-
-
 }
 

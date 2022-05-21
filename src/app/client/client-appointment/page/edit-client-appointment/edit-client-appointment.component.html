@@ -3,16 +3,20 @@
   <p>Would you like to add an item?</p>
 </div>
 
-<mat-form-field appearance="fill">
-  <mat-label>Date Attention</mat-label>
-  <input matInput [(ngModel)]="data.dateAttention">
-</mat-form-field>
-<br>
+<form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="editClientAppointmentFormGroup">
+  <mat-form-field appearance="fill">
+    <mat-label>Date Attention</mat-label>
+    <input matInput  autocomplete="off" formControlName="dateAttention" >
+    <mat-error *ngIf="editClientAppointmentFormGroup.get('dateAttention')?.hasError('required')">
+      DateAttention is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+
 
 
 <div mat-dialog-actions>
-
   <button mat-raised-button color="warn" (click)="onNoClick()">No Thanks</button>
-  <button *ngIf="data" mat-raised-button color="accent" [mat-dialog-close]="data"
-          [disabled]="data.dateAttention==null||data.dateAttention.length==0" >Ok</button>
+  <button *ngIf="editClientAppointmentFormGroup" mat-raised-button color="accent" [mat-dialog-close]="editClientAppointmentFormGroup"
+          [disabled]="editClientAppointmentFormGroup.invalid" >Ok</button>
 </div>

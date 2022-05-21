@@ -24,22 +24,4 @@ export class AddClientApplianceComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-  addAppliance(): void{
-    if(this.applianceFormGroup.valid){
-      this.appliancesModelService.create(this.applianceFormGroup.value)
-        .subscribe(res=>
-          {
-            alert("Add appliance Successfully");
-            console.log(res);
-            this.applianceFormGroup.reset();
-          },err=>
-          {
-            alert("Something Went Wrong");
-          }
-        )
-    }
-    else{
-      alert('Fix errors before submit');
-    }
-  }
 }

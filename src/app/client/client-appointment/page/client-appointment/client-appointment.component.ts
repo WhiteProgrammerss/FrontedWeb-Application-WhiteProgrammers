@@ -50,9 +50,8 @@ export class ClientAppointmentComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result =>{
       if(result!=undefined){
-        let actualAppointment = result;
-
-        this.appointmentsService.update(actualAppointment.id,result).subscribe(response=>{
+        data.dateAttention=result.get("dateAttention")?.value;
+        this.appointmentsService.update(data.id,data).subscribe(response=>{
           this.updateAppointmentsData();
           console.log("Updated");
         })
