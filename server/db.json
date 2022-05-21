@@ -26,15 +26,6 @@
       "address": "av. Palomas 345",
       "email": "josesan@gmail.com",
       "password": "josefernan"
-    },
-    {
-      "names": "gasgsa",
-      "lastNames": "gsagasg",
-      "address": "gqawtattqw",
-      "cellphoneNumber": "936532623",
-      "email": "sgfsaga@agasga.com",
-      "password": "casgqw",
-      "id": 4
     }
   ],
   "technicians": [
@@ -64,15 +55,6 @@
       "address": "Av. Mario Vallejo # 65591 Piso 43",
       "email": "cortes.valentino@gmail.com",
       "password": "alveragui"
-    },
-    {
-      "names": "cargas",
-      "lastNames": "gasgga",
-      "address": "gsagsag",
-      "cellphoneNumber": "923512512",
-      "email": "vasg@gagas.com",
-      "password": "castqtw",
-      "id": 4
     }
   ],
   "reports": [
