@@ -1,16 +1,15 @@
 <app-client-navbar></app-client-navbar>
 <button  mat-raised-button color="accent" (click)="openDialogAdd()">Add Item</button>
-<div class="cards" >
 
-  <mat-card class="card" *ngFor="let appliance of appliancesModelData;">
-    <mat-card-header  class="mat-card-icon">
-      <button  mat-raised-button color="accent" (click)="openDialogUpdate(appliance)">Edit Item</button>
-    </mat-card-header>
-    <img mat-card-image [src]="appliance.imagePath"  alt="Refrigerator">
-    <mat-card-content class="texto">
-      <div><td><strong>Name:</strong></td>{{appliance.name}}</div>
-      <div><td><strong>Model:</strong></td>{{appliance.model}}</div>
-    </mat-card-content>
-  </mat-card>
-</div>
-
+<section class = "flex-container">
+    <mat-card class="card" *ngFor="let appliance of appliancesModelData;">
+      <mat-card-header  class="mat-card-icon">
+        <button  mat-raised-button color="accent" (click)="openDialogUpdate(appliance)">Edit Item</button>
+      </mat-card-header>
+      <img mat-card-image [src]="appliance.imagePath"  alt="Refrigerator">
+      <mat-card-content class="texto">
+        <div><td><strong>Name:</strong></td>{{appliance.name}}</div>
+        <div><td><strong>Model:</strong></td>{{appliance.model}}</div>
+      </mat-card-content>
+    </mat-card>
+</section>
