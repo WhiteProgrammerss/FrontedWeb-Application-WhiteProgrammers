@@ -51,6 +51,7 @@ import {
   EditClientAppointmentComponent
 } from "./client/client-appointment/page/edit-client-appointment/edit-client-appointment.component";
 import {AppointmentsService} from "./client/client-appointment/services/appointments.service";
+import { EditTechnicianReportComponent } from './technician/technician-report/pages/edit-technician-report/edit-technician-report.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import {AppointmentsService} from "./client/client-appointment/services/appointm
     AddClientApplianceComponent,
     EditClientApplianceComponent,
    ClientAppointmentComponent,
-  EditClientAppointmentComponent
+  EditClientAppointmentComponent,
+  EditTechnicianReportComponent
   ],
   imports: [
     BrowserModule,
