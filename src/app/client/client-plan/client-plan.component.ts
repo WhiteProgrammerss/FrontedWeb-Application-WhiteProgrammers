@@ -12,4 +12,8 @@ export class ClientPlanComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  clickAddTodo(e:any){
+    alert(`${e} Plan successfully selected`);
+  }
+
 }
