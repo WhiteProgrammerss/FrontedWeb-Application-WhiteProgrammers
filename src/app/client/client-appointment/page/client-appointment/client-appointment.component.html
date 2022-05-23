@@ -1,5 +1,6 @@
 <app-client-navbar></app-client-navbar>
-<div class="cards" >
+
+<section class = "flex-container">
 
   <mat-card class="card" *ngFor="let appliance of appliancesModelData; index as i">
     <mat-card-header  class="mat-card-icon">
@@ -13,6 +14,5 @@
       <div><td><strong>DateAttention:</strong></td>{{appointmentData[i].dateAttention}}</div>
     </mat-card-content>
   </mat-card>
-
-</div>
+</section>
 
