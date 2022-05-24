@@ -16,9 +16,10 @@ import {AppliancesModelService} from "../../services/appliancesmodel.service";
 export class ClientApplianceComponent implements OnInit {
   id: string;
   appliancesModelData: ApplianceModel[];
-
+  searchKey: string;
   constructor(private route: ActivatedRoute, private appliancesService: AppliancesService,private appliancesModelService: AppliancesModelService,
               private dialog: MatDialog) {
+    this.searchKey = '';
     this. appliancesModelData=[] as ApplianceModel[];
     this.id=this.route.snapshot.paramMap.get('id')!;
   }

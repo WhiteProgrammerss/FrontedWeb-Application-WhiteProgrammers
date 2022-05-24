@@ -1,8 +1,11 @@
 <app-client-navbar></app-client-navbar>
 <button  mat-raised-button color="accent" (click)="openDialogAdd()">Add Item</button>
-
+<mat-form-field appearance="fill">
+  <mat-label>Search</mat-label>
+  <input matInput [(ngModel)]="searchKey">
+</mat-form-field>
 <section class = "flex-container">
-    <mat-card class="card" *ngFor="let appliance of appliancesModelData;">
+    <mat-card class="card" *ngFor="let appliance of appliancesModelData| filter:searchKey:'name';">
       <mat-card-header  class="mat-card-icon">
         <button  mat-raised-button color="accent" (click)="openDialogUpdate(appliance)">Edit Item</button>
       </mat-card-header>

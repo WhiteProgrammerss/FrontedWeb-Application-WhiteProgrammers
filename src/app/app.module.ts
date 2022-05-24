@@ -52,6 +52,7 @@ import {
 } from "./client/client-appointment/page/edit-client-appointment/edit-client-appointment.component";
 import {AppointmentsService} from "./client/client-appointment/services/appointments.service";
 import { EditTechnicianReportComponent } from './technician/technician-report/pages/edit-technician-report/edit-technician-report.component';
+import {FilterPipe} from "./tools/filter.pipe";
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { EditTechnicianReportComponent } from './technician/technician-report/pa
     EditClientApplianceComponent,
    ClientAppointmentComponent,
   EditClientAppointmentComponent,
-  EditTechnicianReportComponent
+  EditTechnicianReportComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
