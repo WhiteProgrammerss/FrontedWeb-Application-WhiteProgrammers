@@ -48,7 +48,6 @@ export class ClientsService {
         catchError(this.handleError));
   }
 
-
   // Get All
   getAll(): Observable<Client> {
     return this.http.get<Client>(this.basePath, this.httpOptions)

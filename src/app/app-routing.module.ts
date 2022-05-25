@@ -4,7 +4,7 @@ import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
 import {ClientApplianceComponent} from "./client/client-appliance/page/client-appliance/client-appliance.component";
-import {ClientPlanComponent} from "./client/client-plan/client-plan.component";
+import {ClientPlanComponent} from "./client/client-plan/page/client-plan/client-plan.component";
 import {RegisterClientComponent} from "./register-client/register-client.component";
 import {RegisterTechnicianComponent} from "./register-technician/register-technician.component";
 import {TechnicianProfileComponent} from "./technician/technician-profile/pages/technician-profile/technician-profile.component";

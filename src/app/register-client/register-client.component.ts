@@ -12,6 +12,7 @@ import {ClientsService} from "../client/client-profile/services/clients.service"
   styleUrls: ['./register-client.component.css']
 })
 export class RegisterClientComponent implements OnInit {
+   user:Client;
 
   registerClientFormGroup= new FormGroup({
     names: new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(15)]),
@@ -24,14 +25,25 @@ export class RegisterClientComponent implements OnInit {
       Validators.minLength(6)])
   });
 
-  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router,private clientsService:ClientsService) { }
+  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router,private clientsService:ClientsService)
+  {
+    this.user={}as Client;
+  }
 
   ngOnInit(): void {
   }
 
   signup(): void{
     if(this.registerClientFormGroup.valid){
-     this.clientsService.create(this.registerClientFormGroup.value)
+      this.user.id=0;
+      this.user.names=this.registerClientFormGroup.get("names")?.value;
+      this.user.lastNames=this.registerClientFormGroup.get("lastNames")?.value;
+      this.user.address=this.registerClientFormGroup.get("address")?.value;
+      this.user.cellphoneNumber=this.registerClientFormGroup.get("cellphoneNumber")?.value;
+      this.user.email=this.registerClientFormGroup.get("email")?.value;
+      this.user.password=this.registerClientFormGroup.get("password")?.value;
+      this.user.planType="None";
+     this.clientsService.create(this.user)
         .subscribe(res=>
           {
             alert("SignUp Successfully");

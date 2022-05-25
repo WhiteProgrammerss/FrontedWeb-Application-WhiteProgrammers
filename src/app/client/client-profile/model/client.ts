@@ -6,4 +6,5 @@ export interface Client {
   address: string;
   email: string;
   password: string;
+  planType:string;
 }
