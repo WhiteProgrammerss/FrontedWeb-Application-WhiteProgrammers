@@ -203,45 +203,5 @@
       "clientId": 3,
       "applianceModelId": 7
     }
-  ],
-  "plans": [
-    {
-      "id": "1",
-      "name": "Basic",
-      "price": 20,
-      "urlToImage": "https://i.imgur.com/Xup56ec.jpg",
-      "frequency": "Monthly"
-    },
-    {
-      "id": "2",
-      "name": "Standard",
-      "price": 40,
-      "urlToImage": "https://i.imgur.com/Ycbaez2.jpg",
-      "frequency": "Quarterly"
-    },
-    {
-      "id": "3",
-      "name": "Premium",
-      "price": 60,
-      "urlToImage": "https://i.imgur.com/vmCJdxC.jpg",
-      "frequency": "Annual"
-    }
-  ],
-  "clientPlan": [
-    {
-      "id": "1",
-      "planId": "1",
-      "clientId": "1"
-    },
-    {
-      "id": "2",
-      "planId": "2",
-      "clientId": "2"
-    },
-    {
-      "id": "3",
-      "planId": "3",
-      "clientId": "3"
-    }
   ]
 }
