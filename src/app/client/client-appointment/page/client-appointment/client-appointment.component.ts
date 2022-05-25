@@ -6,6 +6,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {Appointment} from "../../model/appointment";
 import {AppointmentsService} from "../../services/appointments.service";
 import {EditClientAppointmentComponent} from "../edit-client-appointment/edit-client-appointment.component";
+import {AddClientAppointmentComponent} from "../add-client-appointment/add-client-appointment.component";
 
 @Component({
   selector: 'app-client-appointment',
@@ -31,18 +32,44 @@ export class ClientAppointmentComponent implements OnInit {
   updateAppointmentsData(){
     this.appointmentData=[];
     this.appliancesModelData=[];
-    this.appointmentsService.getAll().subscribe((response:any)=>{
+    this.appointmentsService.getByClientId(this.id).subscribe((response:any)=>{
       this.appointmentData=response;
-      console.log(response);
-      for(let appointmentaux of this.appointmentData ){
-        console.log(appointmentaux);
-        this.appliancesModelService.getById(appointmentaux.applianceModelId).subscribe((response2:any)=>{
-          this.appliancesModelData.push(response2)
-        })
+    })
+    this.appliancesModelService.getByClientId(this.id).subscribe((response:any)=>{
+      this.appliancesModelData=response;
+    })
+  }
+  openDialogAdd(): void{
+    let applianceModel: ApplianceModel;
+    applianceModel={} as ApplianceModel;
+    applianceModel.id=0;
+    applianceModel.clientId=Number(this.id);
+    let appointment: Appointment;
+    appointment={} as Appointment;
+    appointment.id=0;
+    appointment.clientId=Number(this.id);
+    const dialogRef=this.dialog.open(AddClientAppointmentComponent,{
+      data: {
+        applianceModel:this.appliancesModelData,
+        selected:"",
+        appointment:appointment,
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result =>{
+      if(result!=undefined){
+        appointment.applianceModelId=result.selected;
+        appointment.dateReserve=result.appointment.dateReserve;
+        appointment.dateAttention=result.appointment.dateAttention;
+        appointment.hour=result.appointment.hour;
+        console.log(result.selected)
+        this.appointmentsService.create(appointment).subscribe((response:any)=>{
+          this.updateAppointmentsData();
+          alert("Add appointment Successfully");
+        });
       }
     });
   }
-
   openDialogUpdate(data: Appointment): void{
     const dialogRef=this.dialog.open(EditClientAppointmentComponent,{
       data:{...data}
