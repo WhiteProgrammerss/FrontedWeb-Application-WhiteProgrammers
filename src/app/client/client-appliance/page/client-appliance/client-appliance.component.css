@@ -33,7 +33,11 @@
   max-width: 200px;
   text-align: center;
 }
-
+.search{
+  display:flex;
+  flex-direction: row-reverse;
+  align-items: start;
+}
 
 .flex-container {
   padding: 20px;

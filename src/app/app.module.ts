@@ -19,7 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { RegisterClientComponent } from './register-client/register-client.component';
 import { RegisterTechnicianComponent } from './register-technician/register-technician.component';
-import { ClientPlanComponent } from './client/client-plan/client-plan.component';
+import { ClientPlanComponent } from './client/client-plan/page/client-plan/client-plan.component';
 import { ClientApplianceComponent } from './client/client-appliance/page/client-appliance/client-appliance.component';
 import {MatMenuModule} from "@angular/material/menu";
 import { LayoutModule } from '@angular/cdk/layout';
@@ -53,6 +53,10 @@ import {
 import {AppointmentsService} from "./client/client-appointment/services/appointments.service";
 import { EditTechnicianReportComponent } from './technician/technician-report/pages/edit-technician-report/edit-technician-report.component';
 import {FilterPipe} from "./tools/filter.pipe";
+import {MatStepperModule} from "@angular/material/stepper";
+import {
+  AddClientAppointmentComponent
+} from "./client/client-appointment/page/add-client-appointment/add-client-appointment.component";
 
 
 @NgModule({
@@ -80,31 +84,33 @@ import {FilterPipe} from "./tools/filter.pipe";
   EditClientAppointmentComponent,
   EditTechnicianReportComponent,
     FilterPipe,
+    AddClientAppointmentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSortModule,
-    MatInputModule,
-    MatButtonModule,
-    FormsModule,
-    MatDialogModule,
-    FlexLayoutModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatSelectModule,
-    MatCardModule,
-    MatIconModule,
-    MatMenuModule,
-    LayoutModule,
-    MatSidenavModule,
-    MatListModule,
-    MatGridListModule,
-    MatExpansionModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatSortModule,
+        MatInputModule,
+        MatButtonModule,
+        FormsModule,
+        MatDialogModule,
+        FlexLayoutModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatSelectModule,
+        MatCardModule,
+        MatIconModule,
+        MatMenuModule,
+        LayoutModule,
+        MatSidenavModule,
+        MatListModule,
+        MatGridListModule,
+        MatExpansionModule,
+        MatStepperModule
 
-  ],
+    ],
   providers: [
     ClientsService,
     TechniciansService,

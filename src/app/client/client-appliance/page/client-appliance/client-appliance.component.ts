@@ -50,7 +50,7 @@ export class ClientApplianceComponent implements OnInit {
     });
   }
   updateAppliancesData(){
-    this.appliancesModelService.getAll().subscribe((response:any)=>{
+    this.appliancesModelService.getByClientId(this.id).subscribe((response:any)=>{
       this.appliancesModelData=response;
       console.log(response);
     });

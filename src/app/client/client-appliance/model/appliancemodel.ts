@@ -3,7 +3,5 @@ export interface ApplianceModel {
   name: string;
   model: string;
   imagePath: string;
-  applianceBrandId: number;
   clientId:number;
-  purchaseDate:string;
 }
