@@ -51,6 +51,8 @@ import {
   EditClientAppointmentComponent
 } from "./client/client-appointment/page/edit-client-appointment/edit-client-appointment.component";
 import {AppointmentsService} from "./client/client-appointment/services/appointments.service";
+import {MatStepperModule} from "@angular/material/stepper";
+
 
 
 @NgModule({
@@ -77,30 +79,31 @@ import {AppointmentsService} from "./client/client-appointment/services/appointm
    ClientAppointmentComponent,
   EditClientAppointmentComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSortModule,
-    MatInputModule,
-    MatButtonModule,
-    FormsModule,
-    MatDialogModule,
-    FlexLayoutModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatSelectModule,
-    MatCardModule,
-    MatIconModule,
-    MatMenuModule,
-    LayoutModule,
-    MatSidenavModule,
-    MatListModule,
-    MatGridListModule,
-    MatExpansionModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatSortModule,
+        MatInputModule,
+        MatButtonModule,
+        FormsModule,
+        MatDialogModule,
+        FlexLayoutModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatSelectModule,
+        MatCardModule,
+        MatIconModule,
+        MatMenuModule,
+        LayoutModule,
+        MatSidenavModule,
+        MatListModule,
+        MatGridListModule,
+        MatExpansionModule,
+        MatStepperModule
 
-  ],
+    ],
   providers: [
     ClientsService,
     TechniciansService,

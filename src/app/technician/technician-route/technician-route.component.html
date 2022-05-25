@@ -1,2 +1,24 @@
 <app-technician-navbar></app-technician-navbar>
-<p>technician-route works!</p>
+<h1 class="title-config">My Route</h1>
+<mat-stepper class="bg-transparent" orientation="vertical" >
+  <mat-step>
+    <ng-template matStepLabel>Riverview StreetRiverview</ng-template>
+    <ng-template matStepContent>
+      <h2>Direction</h2>
+      <p>Riverview StreetRiverview</p>
+      <h2>Date</h2>
+      <p>26/09/21</p>
+      <h2>Hour</h2>
+      <p>11:59</p>
+      <button mat-button matStepperNext>Next</button>
+    </ng-template>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Resolved</ng-template>
+    <ng-template matStepContent>
+      <p>Finalized</p>
+      <button mat-button matStepperPrevious>Back</button>
+    </ng-template>
+  </mat-step>
+
+</mat-stepper>
