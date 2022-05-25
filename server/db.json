@@ -29,16 +29,6 @@
       "email": "josesan@gmail.com",
       "password": "josefernan",
       "planType": "Premium"
-    },
-    {
-      "id": 4,
-      "names": "sgasgas",
-      "lastNames": "sgasgsag",
-      "address": "asgasgasgsa",
-      "cellphoneNumber": "923623621",
-      "email": "agsag@gasgags",
-      "password": "gsagsagasgsag",
-      "planType": "None"
     }
   ],
   "technicians": [
@@ -212,21 +202,6 @@
       "hour": "09:42",
       "clientId": 3,
       "applianceModelId": 7
-    },
-    {
-      "id": 5,
-      "clientId": 2,
-      "dateReserve": "gasgsa",
-      "dateAttention": "gsagsag",
-      "applianceModelId": "4"
-    },
-    {
-      "id": 6,
-      "clientId": 3,
-      "dateReserve": "dgsdg",
-      "dateAttention": "dgsdgsd",
-      "hour": "gsdgsg",
-      "applianceModelId": "7"
     }
   ],
   "plans": [
