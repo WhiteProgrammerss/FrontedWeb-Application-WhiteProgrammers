@@ -14,7 +14,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button (click)="clickAddTodo('Basic')">CHOOSE PLAN</button>
-      <div *ngIf="clientData.planType=='Basic'">Plan Selected</div>
+      <div class="planBasic" *ngIf="clientData.planType=='Basic'">Plan Selected</div>
     </mat-card-actions>
   </mat-card>
 
@@ -31,7 +31,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button class="btn btn-primary" (click)="clickAddTodo('Standard')">CHOOSE PLAN</button>
-      <div *ngIf="clientData.planType=='Standard'">Plan Selected</div>
+      <div class="planStandard" *ngIf="clientData.planType=='Standard'">Plan Selected</div>
     </mat-card-actions>
   </mat-card>
 
@@ -48,7 +48,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button class="btn btn-primary" (click)="clickAddTodo('Premium')">CHOOSE PLAN</button>
-      <div *ngIf="clientData.planType=='Premium'">Plan Selected</div>
+      <div class="planPremium"  *ngIf="clientData.planType=='Premium'">Plan Selected</div>
 
 
     </mat-card-actions>

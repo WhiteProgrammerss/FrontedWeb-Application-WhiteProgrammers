@@ -195,7 +195,15 @@ template {
   position: relative;
   text-align: center;
 }
-
+.planBasic{
+  color: blue;
+}
+.planStandard{
+  color: yellowgreen;
+}
+.planPremium{
+  color: darkred;
+}
 .card{
   text-align: center;
   align-content: center;
