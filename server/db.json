@@ -148,28 +148,6 @@
       "clientId": 1
     }
   ],
-  "appliances": [
-    {
-      "id": "1",
-      "applianceModelId": "1",
-      "clientId": "1"
-    },
-    {
-      "id": "2",
-      "applianceModelId": "3",
-      "clientId": "1"
-    },
-    {
-      "id": "3",
-      "applianceModelId": "5",
-      "clientId": "2"
-    },
-    {
-      "id": "4",
-      "applianceModelId": "6",
-      "clientId": "3"
-    }
-  ],
   "appointments": [
     {
       "id": 1,
