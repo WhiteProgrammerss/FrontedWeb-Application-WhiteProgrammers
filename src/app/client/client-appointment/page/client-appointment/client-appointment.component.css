@@ -39,7 +39,7 @@
   display: flex;
   flex-flow: row wrap;
   max-width: 80%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: space-between;
   margin: 0 auto;
   position: relative;
