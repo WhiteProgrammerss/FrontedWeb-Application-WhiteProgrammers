@@ -9,7 +9,7 @@ import {Appointment} from "../model/appointment";
 export class AppointmentsService {
 
   // Endpoint
-  basePath = 'http://localhost:3000/appointments';
+  basePath = 'https://my-json-server.typicode.com/WhiteProgrammerss/datos/appointments';
 
   httpOptions = {
     headers: new HttpHeaders({

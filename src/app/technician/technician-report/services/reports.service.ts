@@ -10,7 +10,7 @@ import {Report} from "../model/report";
 export class ReportsService {
 
   // Endpoint
-  basePath = 'http://localhost:3000/reports';
+  basePath = 'https://my-json-server.typicode.com/WhiteProgrammerss/datos/reports';
 
   httpOptions = {
     headers: new HttpHeaders({

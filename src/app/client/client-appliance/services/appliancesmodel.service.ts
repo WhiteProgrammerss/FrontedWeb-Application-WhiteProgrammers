@@ -9,7 +9,7 @@ import {ApplianceModel} from "../model/appliancemodel";
 export class AppliancesModelService {
 
   // Endpoint
-  basePath = 'http://localhost:3000/applianceModels';
+  basePath = 'https://my-json-server.typicode.com/WhiteProgrammerss/datos/applianceModels';
 
   httpOptions = {
     headers: new HttpHeaders({
