@@ -6,7 +6,7 @@
 <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="editClientAppointmentFormGroup">
   <mat-form-field appearance="fill">
     <mat-label>Date Attention</mat-label>
-    <input matInput  autocomplete="off" formControlName="dateAttention" >
+    <input matInput type="date" autocomplete="off" formControlName="dateAttention" >
     <mat-error *ngIf="editClientAppointmentFormGroup.get('dateAttention')?.hasError('required')">
       DateAttention is <strong>required</strong>
     </mat-error>

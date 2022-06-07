@@ -5,21 +5,21 @@
 <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="appointmentFormGroup">
   <mat-form-field appearance="fill">
     <mat-label>Date Reserve</mat-label>
-    <input matInput  autocomplete="off" formControlName="dateReserve" >
+    <input matInput type="date" autocomplete="off" formControlName="dateReserve" >
     <mat-error *ngIf="appointmentFormGroup.get('dateReserve')?.hasError('required')">
       Date Reserve is <strong>required</strong>
     </mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Date Attention</mat-label>
-    <input matInput  autocomplete="off" formControlName="dateAttention" >
+    <input matInput type="date" autocomplete="off" formControlName="dateAttention" >
     <mat-error *ngIf="appointmentFormGroup.get('dateAttention')?.hasError('required')">
       Date Attention is <strong>required</strong>
     </mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Hour</mat-label>
-    <input matInput  autocomplete="off" formControlName="hour" >
+    <input matInput type="datetime-local" autocomplete="off" formControlName="hour" >
     <mat-error *ngIf="appointmentFormGroup.get('hour')?.hasError('required')">
       Hour is <strong>required</strong>
     </mat-error>

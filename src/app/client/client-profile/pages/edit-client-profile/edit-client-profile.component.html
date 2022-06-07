@@ -47,7 +47,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>CellPhoneNumber</mat-label>
-      <input matInput  autocomplete="off" formControlName="cellphoneNumber" >
+      <input matInput type="number" autocomplete="off" formControlName="cellphoneNumber" >
       <mat-error *ngIf="editClientProfileFormGroup.get('cellphoneNumber')?.hasError('required')">
         CellPhoneNumber is <strong>required</strong>
       </mat-error>
@@ -58,7 +58,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
-      <input matInput  autocomplete="off" formControlName="email" >
+      <input matInput type="email" autocomplete="off" formControlName="email" >
       <mat-error *ngIf="editClientProfileFormGroup.get('email')?.hasError('required')">
         Email is <strong>required</strong>
       </mat-error>

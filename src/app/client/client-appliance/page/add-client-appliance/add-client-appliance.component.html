@@ -12,7 +12,7 @@
 </mat-form-field>
 <mat-form-field appearance="fill">
   <mat-label>Url To Image</mat-label>
-  <input matInput  autocomplete="off" formControlName="imagePath" >
+  <input matInput type="url" autocomplete="off" formControlName="imagePath" >
   <mat-error *ngIf="applianceFormGroup.get('imagePath')?.hasError('required')">
     Url is <strong>required</strong>
   </mat-error>

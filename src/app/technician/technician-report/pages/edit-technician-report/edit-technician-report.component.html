@@ -27,7 +27,7 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Date</mat-label>
-    <input matInput  autocomplete="off" formControlName="date" >
+    <input matInput type="date" autocomplete="off" formControlName="date" >
     <mat-error *ngIf="editReportFormGroup.get('date')?.hasError('required')">
       Date is <strong>required</strong>
     </mat-error>
