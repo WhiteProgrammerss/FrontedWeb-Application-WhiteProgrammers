@@ -9,7 +9,7 @@ import {Technician} from "../model/technician";
 export class TechniciansService {
 
   // Endpoint
-  basePath = 'https://my-json-server.typicode.com/WhiteProgrammerss/datos/technicians';
+  basePath = 'https://linerepair-apiservice.herokuapp.com/api/v1/technicians';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -63,7 +63,12 @@ export class TechniciansService {
         retry(2),
         catchError(this.handleError));
   }
-
+  getByUsername(username: any): Observable<Technician> {
+    return this.http.get<Technician>(`${this.basePath}/username/${username}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
   // Update
   update(id: any, item: any): Observable<Technician> {
     return this.http.put<Technician>(`${this.basePath}/${id}`, item, this.httpOptions)

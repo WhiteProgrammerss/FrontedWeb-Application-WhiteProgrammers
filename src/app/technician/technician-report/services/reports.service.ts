@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {Report} from "../model/report";
+import {ApplianceModel} from "../../../client/client-appliance/model/appliancemodel";
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import {Report} from "../model/report";
 export class ReportsService {
 
   // Endpoint
-  basePath = 'https://my-json-server.typicode.com/WhiteProgrammerss/datos/reports';
+  basePath = 'https://linerepair-apiservice.herokuapp.com/api/v1/reports';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -35,8 +36,8 @@ export class ReportsService {
   }
 
   // Create Student
-  create(item: any): Observable<Report> {
-    return this.http.post<Report>(this.basePath, JSON.stringify(item), this.httpOptions)
+  create(item: any,technicianId:any): Observable<Report> {
+    return this.http.post<Report>(`${this.basePath}/${ technicianId }`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));

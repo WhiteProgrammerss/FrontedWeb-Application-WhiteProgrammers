@@ -1,6 +1,7 @@
 export interface Technician {
   id:number;
-  cellphoneNumber: string;
+  username: string;
+  cellPhoneNumber: string;
   names: string;
   lastNames: string;
   address: string;

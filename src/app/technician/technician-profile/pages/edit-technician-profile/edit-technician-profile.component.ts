@@ -14,7 +14,7 @@ export class EditTechnicianProfileComponent {
     names: new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(15)]),
     lastNames: new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(15)]),
     address: new FormControl('',[Validators.required,Validators.minLength(6)]),
-    cellphoneNumber: new FormControl('',[Validators.required, Validators.pattern("^(9)([0-9]){8}$")]),
+    cellPhoneNumber: new FormControl('',[Validators.required, Validators.pattern("^(9)([0-9]){8}$")]),
     email: new FormControl('',[Validators.required,
       Validators.email]),
     password: new FormControl('',[Validators.required,
@@ -29,7 +29,7 @@ export class EditTechnicianProfileComponent {
       names:data.names,
       lastNames:data.lastNames,
       address:data.address,
-      cellphoneNumber:data.cellphoneNumber,
+      cellphoneNumber:data.cellPhoneNumber,
       email:data.email,
       password:data.password
     })

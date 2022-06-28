@@ -32,10 +32,9 @@ export class TechnicianRouteComponent implements OnInit {
     this.clientData=[];
     this.appointmentsService.getAll().subscribe((response:any)=>{
       this.appointmentData=response;
-      console.log(response);
-      for(let appointmentaux of this.appointmentData ){
-        console.log(appointmentaux);
-        this.clientsService.getById(appointmentaux.clientId).subscribe((response2:any)=>{
+      for(let appointmentaux of response ){
+        this.clientsService.getById(appointmentaux.client.id).subscribe((response2:any)=>{
+          console.log(response2);
           this.clientData.push(response2)
         })
       }

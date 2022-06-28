@@ -6,6 +6,11 @@ import {TechniciansService} from "../../../technician-profile/services/technicia
 import {ReportsService} from "../../services/reports.service";
 import {EditTechnicianReportComponent} from "../edit-technician-report/edit-technician-report.component";
 import {MatDialog} from "@angular/material/dialog";
+import {ApplianceModel} from "../../../../client/client-appliance/model/appliancemodel";
+import {
+  AddClientApplianceModelComponent
+} from "../../../../client/client-appliance/page/add-client-applianceModel/add-client-applianceModel.component";
+import {AddTechnicianReportComponent} from "../add-technician-report/add-technician-report.component";
 
 @Component({
   selector: 'app-technician-report',
@@ -27,6 +32,28 @@ export class TechnicianReportComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateReportData();
+  }
+  openDialogAdd(): void{
+    let report: Report;
+    report={} as Report;
+    report.id=0;
+    report.technicianId=Number(this.id);
+    const dialogRef=this.dialog.open(AddTechnicianReportComponent,{
+      data: report
+    });
+
+    dialogRef.afterClosed().subscribe(result =>{
+      if(result!=undefined){
+        report.diagnosis=result.get("diagnosis")?.value;
+        report.observation=result.get("observation")?.value;
+        report.date=result.get("date")?.value;
+        report.repairDescription=result.get("repairDescription")?.value;
+        this.reportsService.create(report,report.technicianId).subscribe((response:any)=>{
+          this.updateReportData();
+          alert("Add report Successfully");
+        });
+      }
+    });
   }
   updateReportData(){
     this.reportsService.getAll().subscribe((response:any)=>{

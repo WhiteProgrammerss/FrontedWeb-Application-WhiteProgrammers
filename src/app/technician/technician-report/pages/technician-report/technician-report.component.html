@@ -1,7 +1,7 @@
 <app-technician-navbar></app-technician-navbar>
 
 <h1 class="title-config">My Reports</h1>
-
+<button  mat-raised-button color="accent" (click)="openDialogAdd()">Add Item</button>
 <mat-grid-list cols="2" rowHeight="2:1" >
   <mat-grid-tile class = "grid-config" *ngFor="let report of reportsData; let i = index" [attr.data-index]="i">
     <mat-accordion class="example-headers-align">

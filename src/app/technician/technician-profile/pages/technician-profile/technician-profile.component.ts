@@ -41,7 +41,7 @@ export class TechnicianProfileComponent implements OnInit {
         data.names=result.get("names")?.value;
         data.lastNames=result.get("lastNames")?.value;
         data.address=result.get("address")?.value;
-        data.cellphoneNumber=result.get("cellphoneNumber")?.value;
+        data.cellPhoneNumber=result.get("cellPhoneNumber")?.value;
         data.email=result.get("email")?.value;
         data.password=result.get("password")?.value;
         this.techniciansService.update(data.id,data).subscribe(response=>{
