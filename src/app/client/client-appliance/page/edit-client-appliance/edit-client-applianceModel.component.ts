@@ -4,27 +4,27 @@ import {ApplianceModel} from "../../model/appliancemodel";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector:'app-edit-client-appliance',
-  templateUrl: './edit-client-appliance.component.html',
-  styleUrls: ['./edit-client-appliance.component.css']
+  selector:'app-edit-client-applianceModel',
+  templateUrl: './edit-client-applianceModel.component.html',
+  styleUrls: ['./edit-client-applianceModel.component.css']
 })
 
-export class EditClientApplianceComponent {
-  editApplianceFormGroup= new FormGroup({
+export class EditClientApplianceModelComponent {
+  editApplianceModelFormGroup= new FormGroup({
     name: new FormControl('',[Validators.required]),
     model: new FormControl('',[Validators.required]),
-    imagePath: new FormControl('',[Validators.required]),
+    urlToImage: new FormControl('',[Validators.required]),
   });
 
 
   constructor(
-    public dialogRef: MatDialogRef<EditClientApplianceComponent>,
+    public dialogRef: MatDialogRef<EditClientApplianceModelComponent>,
     @Inject(MAT_DIALOG_DATA) public  data: ApplianceModel,
   ){
-    this.editApplianceFormGroup.setValue({
+    this.editApplianceModelFormGroup.setValue({
       name:data.name,
       model:data.model,
-      imagePath:data.imagePath
+      urlToImage:data.urlToImage
     })
   }
 

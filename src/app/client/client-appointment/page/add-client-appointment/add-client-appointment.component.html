@@ -19,7 +19,7 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Hour</mat-label>
-    <input matInput type="datetime-local" autocomplete="off" formControlName="hour" >
+    <input matInput autocomplete="off" formControlName="hour" >
     <mat-error *ngIf="appointmentFormGroup.get('hour')?.hasError('required')">
       Hour is <strong>required</strong>
     </mat-error>

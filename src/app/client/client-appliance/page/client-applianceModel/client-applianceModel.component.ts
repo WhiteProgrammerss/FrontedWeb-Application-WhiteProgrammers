@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {ActivatedRoute} from "@angular/router";
-import {Appliance} from "../../model/appliance";
-import {AppliancesService} from "../../services/appliances.service";
-import {AddClientApplianceComponent} from "../add-client-appliance/add-client-appliance.component";
-import {EditClientApplianceComponent} from "../edit-client-appliance/edit-client-appliance.component";
+import {AddClientApplianceModelComponent} from "../add-client-applianceModel/add-client-applianceModel.component";
+import {EditClientApplianceModelComponent} from "../edit-client-appliance/edit-client-applianceModel.component";
 import {ApplianceModel} from "../../model/appliancemodel";
 import {AppliancesModelService} from "../../services/appliancesmodel.service";
 
 @Component({
-  selector: 'app-client-appliance',
-  templateUrl: './client-appliance.component.html',
-  styleUrls: ['./client-appliance.component.css']
+  selector: 'app-client-applianceModel',
+  templateUrl: './client-applianceModel.component.html',
+  styleUrls: ['./client-applianceModel.component.css']
 })
-export class ClientApplianceComponent implements OnInit {
+export class ClientApplianceModelComponent implements OnInit {
   id: string;
   appliancesModelData: ApplianceModel[];
   searchKey: string;
-  constructor(private route: ActivatedRoute, private appliancesService: AppliancesService,private appliancesModelService: AppliancesModelService,
+  constructor(private route: ActivatedRoute,private appliancesModelService: AppliancesModelService,
               private dialog: MatDialog) {
     this.searchKey = '';
     this. appliancesModelData=[] as ApplianceModel[];
@@ -33,7 +31,7 @@ export class ClientApplianceComponent implements OnInit {
     applianceModel={} as ApplianceModel;
     applianceModel.id=0;
     applianceModel.clientId=Number(this.id);
-    const dialogRef=this.dialog.open(AddClientApplianceComponent,{
+    const dialogRef=this.dialog.open(AddClientApplianceModelComponent,{
       data: applianceModel
     });
 
@@ -41,8 +39,8 @@ export class ClientApplianceComponent implements OnInit {
       if(result!=undefined){
         applianceModel.name=result.get("name")?.value;
         applianceModel.model=result.get("model")?.value;
-        applianceModel.imagePath=result.get("imagePath")?.value;
-        this.appliancesModelService.create(applianceModel).subscribe((response:any)=>{
+        applianceModel.urlToImage=result.get("urlToImage")?.value;
+        this.appliancesModelService.create(applianceModel,applianceModel.clientId).subscribe((response:any)=>{
           this.updateAppliancesData();
           alert("Add appliance Successfully");
         });
@@ -57,7 +55,7 @@ export class ClientApplianceComponent implements OnInit {
   }
 
   openDialogUpdate(data: ApplianceModel): void{
-    const dialogRef=this.dialog.open(EditClientApplianceComponent,{
+    const dialogRef=this.dialog.open(EditClientApplianceModelComponent,{
       data: {...data}
     });
 
@@ -65,8 +63,12 @@ export class ClientApplianceComponent implements OnInit {
       if(result!=undefined){
         data.name=result.get("name")?.value;
         data.model=result.get("model")?.value;
-        data.imagePath=result.get("imagePath")?.value;
-        this.appliancesModelService.update(data.id,data).subscribe(response=>{
+        data.urlToImage=result.get("urlToImage")?.value;
+        this.appliancesModelService.update(data.id,{
+          name:data.name,
+          model:data.model,
+          urlToImage:data.urlToImage
+        }).subscribe(response=>{
           this.updateAppliancesData();
           console.log("Updated");
         })

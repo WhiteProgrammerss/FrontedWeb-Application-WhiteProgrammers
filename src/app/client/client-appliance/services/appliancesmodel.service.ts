@@ -9,7 +9,7 @@ import {ApplianceModel} from "../model/appliancemodel";
 export class AppliancesModelService {
 
   // Endpoint
-  basePath = 'https://my-json-server.typicode.com/WhiteProgrammerss/datos/applianceModels';
+  basePath = 'https://linerepair-apiservice.herokuapp.com/api/v1/applianceModels';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -33,8 +33,8 @@ export class AppliancesModelService {
     return throwError(() => new Error('Something happened with request, please try again later'));
   }
 
-  create(item: any): Observable<ApplianceModel> {
-    return this.http.post<ApplianceModel>(this.basePath, JSON.stringify(item), this.httpOptions)
+  create(item: any,clientId:any): Observable<ApplianceModel> {
+    return this.http.post<ApplianceModel>(`${this.basePath}/${ clientId }`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
@@ -48,8 +48,8 @@ export class AppliancesModelService {
         catchError(this.handleError));
   }
 
-  getByClientId(id: any):Observable<ApplianceModel> {
-    return this.http.get<ApplianceModel>(`${this.basePath}/?clientId=${id}`, this.httpOptions)
+  getByClientId(clientId: any):Observable<ApplianceModel> {
+    return this.http.get<ApplianceModel>(`${this.basePath}/${clientId}/applianceModels`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));

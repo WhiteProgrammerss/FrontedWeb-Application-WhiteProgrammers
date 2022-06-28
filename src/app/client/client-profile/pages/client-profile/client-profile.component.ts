@@ -6,7 +6,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {EditClientProfileComponent} from "../edit-client-profile/edit-client-profile.component";
 
 @Component({
-  selector: 'app-client-appliance',
+  selector: 'app-client-applianceModel',
   templateUrl: './client-profile.component.html',
   styleUrls: ['./client-profile.component.css']
 })
@@ -41,7 +41,7 @@ export class ClientProfileComponent implements OnInit {
         data.names=result.get("names")?.value;
         data.lastNames=result.get("lastNames")?.value;
         data.address=result.get("address")?.value;
-        data.cellphoneNumber=result.get("cellphoneNumber")?.value;
+        data.cellPhoneNumber=result.get("cellPhoneNumber")?.value;
         data.email=result.get("email")?.value;
         data.password=result.get("password")?.value;
         this.clientsService.update(data.id,data).subscribe(response=>{

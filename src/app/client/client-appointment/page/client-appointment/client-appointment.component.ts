@@ -58,12 +58,13 @@ export class ClientAppointmentComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result =>{
       if(result!=undefined){
+        appointment.clientId=result.appointment.clientId;
         appointment.applianceModelId=result.selected;
         appointment.dateReserve=result.appointment.dateReserve;
         appointment.dateAttention=result.appointment.dateAttention;
         appointment.hour=result.appointment.hour;
         console.log(result.selected)
-        this.appointmentsService.create(appointment).subscribe((response:any)=>{
+        this.appointmentsService.create(appointment.clientId,appointment.applianceModelId,appointment).subscribe((response:any)=>{
           this.updateAppointmentsData();
           alert("Add appointment Successfully");
         });

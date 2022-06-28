@@ -2,25 +2,25 @@
 <div mat-dialog-content>
   <p>Would you like to add an item?</p>
 </div>
-<form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="applianceFormGroup">
+<form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="applianceModelFormGroup">
 <mat-form-field appearance="fill">
   <mat-label>Name</mat-label>
   <input matInput  autocomplete="off" formControlName="name" >
-  <mat-error *ngIf="applianceFormGroup.get('name')?.hasError('required')">
+  <mat-error *ngIf="applianceModelFormGroup.get('name')?.hasError('required')">
     Name is <strong>required</strong>
   </mat-error>
 </mat-form-field>
 <mat-form-field appearance="fill">
   <mat-label>Url To Image</mat-label>
-  <input matInput type="url" autocomplete="off" formControlName="imagePath" >
-  <mat-error *ngIf="applianceFormGroup.get('imagePath')?.hasError('required')">
+  <input matInput type="url" autocomplete="off" formControlName="urlToImage" >
+  <mat-error *ngIf="applianceModelFormGroup.get('urlToImage')?.hasError('required')">
     Url is <strong>required</strong>
   </mat-error>
 </mat-form-field>
 <mat-form-field appearance="fill">
   <mat-label>Model</mat-label>
   <input matInput  autocomplete="off" formControlName="model" >
-  <mat-error *ngIf="applianceFormGroup.get('model')?.hasError('required')">
+  <mat-error *ngIf="applianceModelFormGroup.get('model')?.hasError('required')">
     Model is <strong>required</strong>
   </mat-error>
 </mat-form-field>
@@ -28,5 +28,5 @@
 
 <div mat-dialog-actions>
   <button mat-raised-button color="warn" (click)="onNoClick()">No Thanks</button>
-  <button mat-raised-button color="primary" [mat-dialog-close]="applianceFormGroup" type="submit" [disabled]="applianceFormGroup.invalid">OK</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="applianceModelFormGroup" type="submit" [disabled]="applianceModelFormGroup.invalid">OK</button>
 </div>

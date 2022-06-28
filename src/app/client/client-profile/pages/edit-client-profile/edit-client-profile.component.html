@@ -47,11 +47,11 @@
 
     <mat-form-field appearance="fill">
       <mat-label>CellPhoneNumber</mat-label>
-      <input matInput type="number" autocomplete="off" formControlName="cellphoneNumber" >
-      <mat-error *ngIf="editClientProfileFormGroup.get('cellphoneNumber')?.hasError('required')">
+      <input matInput type="number" autocomplete="off" formControlName="cellPhoneNumber" >
+      <mat-error *ngIf="editClientProfileFormGroup.get('cellPhoneNumber')?.hasError('required')">
         CellPhoneNumber is <strong>required</strong>
       </mat-error>
-      <mat-error *ngIf="editClientProfileFormGroup.get('cellphoneNumber')?.hasError('pattern')">
+      <mat-error *ngIf="editClientProfileFormGroup.get('cellPhoneNumber')?.hasError('pattern')">
         CellPhoneNumber must have a valid <strong>number</strong>
       </mat-error>
     </mat-form-field>

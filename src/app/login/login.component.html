@@ -7,12 +7,11 @@
     </mat-card-header>
     <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="userFormGroup">
     <mat-form-field appearance="fill">
-      <mat-label>Email</mat-label>
-      <input matInput  autocomplete="off" formControlName="email" >
-      <mat-error *ngIf="userFormGroup.get('email')?.hasError('required')">
-        Email is <strong>required</strong>
+      <mat-label>Username</mat-label>
+      <input matInput  autocomplete="off" formControlName="username" >
+      <mat-error *ngIf="userFormGroup.get('username')?.hasError('required')">
+        Username is <strong>required</strong>
       </mat-error>
-      <mat-error *ngIf="userFormGroup.get('email')?.hasError('email')">Invalid email</mat-error>
     </mat-form-field>
 
       <mat-form-field appearance="fill">

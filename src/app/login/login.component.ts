@@ -5,6 +5,7 @@ import {Client} from "../client/client-profile/model/client";
 import {ClientsService} from "../client/client-profile/services/clients.service";
 import {TechniciansService} from "../technician/technician-profile/services/technicians.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UsersService} from "../users/services/users.service";
 
 @Component({
   selector: 'app-login',
@@ -15,12 +16,10 @@ export class LoginComponent implements OnInit {
   showPassword: Boolean = false;
 
   userFormGroup= new FormGroup({
-    email: new FormControl('',[Validators.required,
-      Validators.email]),
+    username: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required,
       Validators.minLength(6)])
   });
-
 
   user: Client;
   clientFound: Client;
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit {
   technicianFound: Technician;
 
   constructor(private clientsService: ClientsService, private techniciansService: TechniciansService,
-              private route:Router) {
+              private route:Router, private usersService: UsersService) {
     this.user = {} as Client;
     this.clientFound = {} as Client;
     this.technicianData = {} as Technician;
@@ -39,34 +38,27 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   SubmitLogin(){
-    if(this.userFormGroup.valid)
-    {
-      this.clientsService.getByEmail(this.userFormGroup.get("email")?.value).subscribe((clientresponse: any) => {
-        if (clientresponse.length > 0) {
-          this.clientFound = clientresponse[0];
-          if (this.clientFound.password == this.userFormGroup.get("password")?.value) {
-            this.route.navigate(['/client',this.clientFound.id,'client-profile'])
-            console.log("Login Successful as a Client !!");
-          } else {
-            console.log("Wrong Username or Password !!");
-          }
-        }
-      })
-
-      this.techniciansService.getByEmail(this.userFormGroup.get("email")?.value).subscribe((technicianresponse: any) => {
-        if (technicianresponse.length > 0) {
-          this.technicianFound = technicianresponse[0];
-          if (this.technicianFound.password == this.userFormGroup.get("password")?.value) {
-            this.route.navigate(['/technician',this.technicianFound.id,'technician-profile']);
-            console.log("Login Successful as a Technician !!");
-          } else {
-            console.log("Wrong Username or Password !!");
-          }
-        }
+    if(this.userFormGroup.valid){
+      this.usersService.authenticateUser({
+        username: this.userFormGroup.get('username')?.value,
+        password: this.userFormGroup.get('password')?.value,
+      }).subscribe((response:any)=>{
+        console.log(response);
+        localStorage.setItem('token',response.token);
+        this.usersService.verifyTokenClient().subscribe((response2: any)=>{
+          this.clientsService.getByUsername(response.username).subscribe((response3: any)=>{
+            this.route.navigate(['/client',response3.id,'client-profile']);
+          })
+        })
+        this.usersService.verifyTokenTechnician().subscribe((response2: any)=>{
+          this.techniciansService.getByUsername(response.username).subscribe((response3: any)=>{
+            console.log(response3.id);
+            this.route.navigate(['/technician',response3.id,'technician-profile']);
+          })
+        })
       })
     }
-
   }
+
 }

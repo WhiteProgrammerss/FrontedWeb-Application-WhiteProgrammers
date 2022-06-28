@@ -4,7 +4,7 @@ import {Client} from "../../model/client";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-edit-client-appliance',
+  selector: 'app-edit-client-applianceModel',
   templateUrl: './edit-client-profile.component.html',
   styleUrls: ['./edit-client-profile.component.css']
 })
@@ -13,7 +13,7 @@ export class EditClientProfileComponent  {
     names: new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(15)]),
     lastNames: new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(15)]),
     address: new FormControl('',[Validators.required,Validators.minLength(6)]),
-    cellphoneNumber: new FormControl('',[Validators.required, Validators.pattern("^(9)([0-9]){8}$")]),
+    cellPhoneNumber: new FormControl('',[Validators.required, Validators.pattern("^(9)([0-9]){8}$")]),
     email: new FormControl('',[Validators.required,
       Validators.email]),
     password: new FormControl('',[Validators.required,
@@ -28,7 +28,7 @@ export class EditClientProfileComponent  {
       names:data.names,
       lastNames:data.lastNames,
       address:data.address,
-      cellphoneNumber:data.cellphoneNumber,
+      cellPhoneNumber:data.cellPhoneNumber,
       email:data.email,
       password:data.password
     })

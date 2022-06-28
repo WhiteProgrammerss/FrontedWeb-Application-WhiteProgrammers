@@ -5,18 +5,18 @@ import {AppliancesModelService} from "../../services/appliancesmodel.service";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
-  selector: 'app-add-client-appliance',
-  templateUrl: './add-client-appliance.component.html'
+  selector: 'app-add-client-applianceModel',
+  templateUrl: './add-client-applianceModel.component.html'
 })
-export class AddClientApplianceComponent {
-  applianceFormGroup= new FormGroup({
+export class AddClientApplianceModelComponent {
+  applianceModelFormGroup= new FormGroup({
     name: new FormControl('',[Validators.required]),
     model: new FormControl('',[Validators.required]),
-    imagePath: new FormControl('',[Validators.required]),
+    urlToImage: new FormControl('',[Validators.required]),
   });
 
   constructor(
-    public dialogRef: MatDialogRef<AddClientApplianceComponent>,private http:HttpClient,private appliancesModelService:AppliancesModelService
+    public dialogRef: MatDialogRef<AddClientApplianceModelComponent>, private http:HttpClient, private appliancesModelService:AppliancesModelService
   ) {}
 
   onNoClick(): void {

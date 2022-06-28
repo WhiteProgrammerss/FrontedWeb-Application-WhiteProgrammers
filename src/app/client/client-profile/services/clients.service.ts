@@ -3,13 +3,14 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {Client} from "../model/client";
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ClientsService {
 
   // Endpoint
-  basePath = 'https://my-json-server.typicode.com/WhiteProgrammerss/datos/clients';
+  basePath = 'https://linerepair-apiservice.herokuapp.com/api/v1/clients';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -57,12 +58,18 @@ export class ClientsService {
   }
 
   getByEmail(email: any): Observable<Client> {
-    return this.http.get<Client>(`${this.basePath}/?email=${email}`, this.httpOptions)
+    return this.http.get<Client>(`${this.basePath}/email/${email}`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));
   }
 
+  getByUsername(username: any): Observable<Client> {
+    return this.http.get<Client>(`${this.basePath}/username/${username}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
   // Update
   update(id: any, item: any): Observable<Client> {
     return this.http.put<Client>(`${this.basePath}/${id}`, item, this.httpOptions)

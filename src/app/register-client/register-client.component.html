@@ -5,8 +5,22 @@
       <mat-card-title>Register-Client</mat-card-title>
     </mat-card-header>
 
-
     <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="registerClientFormGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput  autocomplete="off" formControlName="username" >
+        <mat-error *ngIf="registerClientFormGroup.get('username')?.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="registerClientFormGroup.get('username')?.hasError('minlength')">
+          Username must have at least <strong>6</strong> characters
+        </mat-error>
+        <mat-error *ngIf="registerClientFormGroup.get('username')?.hasError('maxlength') &&
+                            !registerClientFormGroup.get('username')?.hasError('required')">
+          Username must have less than <strong>16</strong> characters
+        </mat-error>
+      </mat-form-field>
+
       <mat-form-field appearance="fill">
         <mat-label>FirstName</mat-label>
         <input matInput  autocomplete="off" formControlName="names" >
@@ -51,11 +65,11 @@
 
       <mat-form-field appearance="fill">
         <mat-label>CellPhoneNumber</mat-label>
-        <input matInput type="number" autocomplete="off" formControlName="cellphoneNumber" >
-        <mat-error *ngIf="registerClientFormGroup.get('cellphoneNumber')?.hasError('required')">
+        <input matInput type="number" autocomplete="off" formControlName="cellPhoneNumber" >
+        <mat-error *ngIf="registerClientFormGroup.get('cellPhoneNumber')?.hasError('required')">
           CellPhoneNumber is <strong>required</strong>
         </mat-error>
-        <mat-error *ngIf="registerClientFormGroup.get('cellphoneNumber')?.hasError('pattern')">
+        <mat-error *ngIf="registerClientFormGroup.get('cellPhoneNumber')?.hasError('pattern')">
           CellPhoneNumber must have a valid <strong>number</strong>
         </mat-error>
       </mat-form-field>
@@ -80,7 +94,7 @@
           Password must have at least <strong>6</strong> characters
         </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" (click)="signup()">Register</button>
+      <button mat-raised-button color="primary" type="submit" (click)="SubmitRegisterClient()">Register</button>
     </form>
   </mat-card>
 </div>

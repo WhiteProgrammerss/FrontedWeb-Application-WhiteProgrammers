@@ -5,4 +5,5 @@ export interface Appointment{
   dateAttention:string;
   hour:string;
   applianceModelId:number;
+  applianceModel:{urlToImage:string,name:string,model:string};
 }
