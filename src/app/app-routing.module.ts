@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
-import {ClientApplianceComponent} from "./client/client-appliance/page/client-appliance/client-appliance.component";
+import {ClientApplianceModelComponent} from "./client/client-appliance/page/client-applianceModel/client-applianceModel.component";
 import {ClientPlanComponent} from "./client/client-plan/page/client-plan/client-plan.component";
 import {RegisterClientComponent} from "./register-client/register-client.component";
 import {RegisterTechnicianComponent} from "./register-technician/register-technician.component";
@@ -14,25 +14,41 @@ import {ClientProfileComponent} from "./client/client-profile/pages/client-profi
 import {
   ClientAppointmentComponent
 } from "./client/client-appointment/page/client-appointment/client-appointment.component";
+import {NoAuthGuard} from "./auth/guards/no-auth/no-auth.guard";
+import {ClientGuard} from "./auth/guards/client/client.guard";
+import {TechnicianGuard} from "./auth/guards/technician/technician.guard";
 
 
 const routes: Routes = [
 
+  {
+    path: '',
+    canActivate: [NoAuthGuard],
+    canActivateChild: [NoAuthGuard],
+    children: [
       { path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: 'home',  component: HomeComponent},
-      {path: 'login',  component: LoginComponent},
-      {path: 'register',  component: RegisterComponent},
-      {path: 'register-technician',  component: RegisterTechnicianComponent},
-      {path: 'register-client',  component: RegisterClientComponent},
-  {path: 'client/:id', children: [
+      {path: 'home', component: HomeComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'register', component: RegisterComponent},
+      {path: 'register-technician', component: RegisterTechnicianComponent},
+      {path: 'register-client', component: RegisterClientComponent},
+    ]
+  },
+  {path: 'client/:id',
+    canActivate: [ClientGuard],
+    canActivateChild: [ClientGuard],
+    children: [
       { path: '', redirectTo: 'client-profile', pathMatch: 'full'},
       {path: 'appointment', component: ClientAppointmentComponent},
-      {path: 'appliance',  component: ClientApplianceComponent},
+      {path: 'applianceModel',  component: ClientApplianceModelComponent},
       {path: 'plan', component: ClientPlanComponent},
       {path: 'client-profile', component: ClientProfileComponent}
     ]
   },
-  { path: 'technician/:id', children:[
+  { path: 'technician/:id',
+    canActivate: [TechnicianGuard],
+    canActivateChild: [TechnicianGuard],
+    children:[
       { path: '', redirectTo: 'technician-profile',pathMatch: 'full'},
       { path: 'technician-profile', component: TechnicianProfileComponent},
       { path: 'route', component: TechnicianRouteComponent},
