@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,7 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { RegisterClientComponent } from './register-client/register-client.component';
 import { RegisterTechnicianComponent } from './register-technician/register-technician.component';
 import { ClientPlanComponent } from './client/client-plan/page/client-plan/client-plan.component';
-import { ClientApplianceComponent } from './client/client-appliance/page/client-appliance/client-appliance.component';
+import { ClientApplianceModelComponent } from './client/client-appliance/page/client-applianceModel/client-applianceModel.component';
 import {MatMenuModule} from "@angular/material/menu";
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -38,12 +38,11 @@ import { ClientProfileComponent } from './client/client-profile/pages/client-pro
 import { EditClientProfileComponent } from './client/client-profile/pages/edit-client-profile/edit-client-profile.component';
 import { EditTechnicianProfileComponent } from './technician/technician-profile/pages/edit-technician-profile/edit-technician-profile.component';
 import {MatExpansionModule} from "@angular/material/expansion";
-import { AddClientApplianceComponent } from './client/client-appliance/page/add-client-appliance/add-client-appliance.component';
+import { AddClientApplianceModelComponent } from './client/client-appliance/page/add-client-applianceModel/add-client-applianceModel.component';
 import {
-  EditClientApplianceComponent
-} from "./client/client-appliance/page/edit-client-appliance/edit-client-appliance.component";
+  EditClientApplianceModelComponent
+} from "./client/client-appliance/page/edit-client-appliance/edit-client-applianceModel.component";
 import {MatGridListModule} from "@angular/material/grid-list";
-import {AppliancesService} from "./client/client-appliance/services/appliances.service";
 import {
   ClientAppointmentComponent
 } from "./client/client-appointment/page/client-appointment/client-appointment.component";
@@ -57,7 +56,10 @@ import {MatStepperModule} from "@angular/material/stepper";
 import {
   AddClientAppointmentComponent
 } from "./client/client-appointment/page/add-client-appointment/add-client-appointment.component";
-
+import {JwtInterceptor} from "./auth/jwt-interceptor";
+import {AppliancesModelService} from "./client/client-appliance/services/appliancesmodel.service";
+import {ReportsService} from "./technician/technician-report/services/reports.service";
+import {AddTechnicianReportComponent} from "./technician/technician-report/pages/add-technician-report/add-technician-report.component";
 
 @NgModule({
   declarations: [
@@ -68,7 +70,7 @@ import {
     RegisterClientComponent,
     RegisterTechnicianComponent,
     ClientPlanComponent,
-    ClientApplianceComponent,
+    ClientApplianceModelComponent,
     HomeNavbarComponent,
     ClientNavbarComponent,
     TechnicianNavbarComponent,
@@ -78,13 +80,14 @@ import {
     ClientProfileComponent,
     EditClientProfileComponent,
     EditTechnicianProfileComponent,
-    AddClientApplianceComponent,
-    EditClientApplianceComponent,
+    AddClientApplianceModelComponent,
+    EditClientApplianceModelComponent,
    ClientAppointmentComponent,
   EditClientAppointmentComponent,
   EditTechnicianReportComponent,
     FilterPipe,
     AddClientAppointmentComponent,
+    AddTechnicianReportComponent,
   ],
     imports: [
         BrowserModule,
@@ -114,16 +117,24 @@ import {
   providers: [
     ClientsService,
     TechniciansService,
-    AppliancesService,
+    AppliancesModelService,
     AppointmentsService,
+    ReportsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
   entryComponents:[
     EditClientProfileComponent,
     EditTechnicianProfileComponent,
-    AddClientApplianceComponent,
-    EditClientApplianceComponent,
+    AddClientApplianceModelComponent,
+    EditClientApplianceModelComponent,
     EditClientAppointmentComponent,
+    AddTechnicianReportComponent,
   ]
+
 })
 export class AppModule { }
